@@ -2571,9 +2571,9 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 		echo"<p style='color:green;font-size:17pt'>SAVINGS</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Deposit</p></br>";
 			  //getting monthly deposits
-			 $a6= mysqli_query($con,"select * from deposit where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numa6=mysqli_num_rows($a6);
-			  if($numa6>0){
+			 $a7= mysqli_query($con,"select * from deposit where MONTH(date)='07' and YEAR(date)='$yr'");
+		      $numa7=mysqli_num_rows($a7);
+			  if($numa7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Deposit id.</td>";
@@ -2585,20 +2585,20 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
              echo"<td>Account Balance</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowd6 = mysqli_fetch_array($a6)){
+				while($rowd7 = mysqli_fetch_array($a7)){
 		echo"<tr>";
-        echo"<td>".$rowd6['depositId']."</td>";
-        echo"<td>".$rowd['Name']."</td>";
-        $m6= number_format($rowd6['depositAmount']);
-        echo"<td>".$m6."</td>";
-         echo"<td>".$rowd6['date']."</td>";
-        echo"<td>".$rowd6['paidBy']."</td>";
+        echo"<td>".$rowd7['depositId']."</td>";
+        echo"<td>".$rowd7['Name']."</td>";
+        $m7= number_format($rowd7['depositAmount']);
+        echo"<td>".$m7."</td>";
+         echo"<td>".$rowd7['date']."</td>";
+        echo"<td>".$rowd7['paidBy']."</td>";
         
-       echo"<td>".$rowd6['tellerName']."</td>";
+       echo"<td>".$rowd7['tellerName']."</td>";
         
-        $n6= number_format($rowd6['balance']);
-        echo"<td>".$n6."</td>";
-        echo"<td>".$rowd6['AccountNo']."</td>";
+        $n7= number_format($rowd7['balance']);
+        echo"<td>".$n7."</td>";
+        echo"<td>".$rowd7['AccountNo']."</td>";
         
        
        
@@ -2607,15 +2607,15 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Deposit record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Deposit record for July ".$yr."</p></br>";  
 			  }
 			  
 			 
 			 //getting monthly withdraws
 			  echo"<p style='color:blue;font-size:16pt'>Withdrawals</p></br>";
-			   $b6= mysqli_query($con,"select * from withdraw where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numb6=mysqli_num_rows($b6);
-			  if($numb6>0){
+			   $b7= mysqli_query($con,"select * from withdraw where MONTH(date)='07' and YEAR(date)='$yr'");
+		      $numb7=mysqli_num_rows($b7);
+			  if($numb7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>withdrawId</td>";
@@ -2627,19 +2627,19 @@ echo"</table></br>";
              echo"<td>mgtFees</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowth6 = mysqli_fetch_array($b6)){
+				while($rowth7 = mysqli_fetch_array($b7)){
 		echo"<tr>";
-        echo"<td>".$rowth6['withdrawId']."</td>";
-        echo"<td>".$rowth6['Name']."</td>";
-        $mth6= number_format($rowth6['withdrawAmount']);
-        echo"<td>".$mth6."</td>";
-         echo"<td>".$rowth6['date']."</td>";
-        echo"<td>".$rowth6['tellerName']."</td>";
-        $nth6= number_format($rowth6['balance']);
-        echo"<td>".$nth6."</td>";
-		$mgth6= number_format($rowth6['mgtFees']);
-        echo"<td>".$mgth6."</td>";
-        echo"<td>".$rowth6['AccountNo']."</td>";
+        echo"<td>".$rowth7['withdrawId']."</td>";
+        echo"<td>".$rowth7['Name']."</td>";
+        $mth7= number_format($rowth7['withdrawAmount']);
+        echo"<td>".$mth7."</td>";
+         echo"<td>".$rowth7['date']."</td>";
+        echo"<td>".$rowth67['tellerName']."</td>";
+        $nth7= number_format($rowth7['balance']);
+        echo"<td>".$nth7."</td>";
+		$mgth7= number_format($rowth7['mgtFees']);
+        echo"<td>".$mgth7."</td>";
+        echo"<td>".$rowth7['AccountNo']."</td>";
         
        
        
@@ -2648,16 +2648,16 @@ echo"</table></br>";
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Withdraw record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Withdraw record for July ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly expenses
 			  echo"<p style='color:green;font-size:17pt'>INCOME STATEMENT</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Expenses</p></br>";
-			  $c6= mysqli_query($con,"select * from expenses where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numc6=mysqli_num_rows($c6);
-			  if($numc6>0){
+			  $c7= mysqli_query($con,"select * from expenses where MONTH(date)='07' and YEAR(date)='$yr'");
+		      $numc7=mysqli_num_rows($c7);
+			  if($numc7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>VoucherNo</td>";
@@ -2666,29 +2666,29 @@ echo"</table></br>";
     echo"<td>Date </td>";
              echo"<td>personResponsible</td>";
              echo"</tr>";
-				while($rowxp6 = mysqli_fetch_array($c6)){
+				while($rowxp7 = mysqli_fetch_array($c7)){
 		echo"<tr>";
-        echo"<td>".$rowxp6['VoucherNo']."</td>";
-        echo"<td>".$rowxp6['expenseType']."</td>";
-        $mxp6= number_format($rowxp6['expenseAmount']);
-        echo"<td>".$mxp6."</td>";
-         echo"<td>".$rowxp6['date']."</td>";
-        echo"<td>".$rowxp6['personResponsible']."</td>";
+        echo"<td>".$rowxp7['VoucherNo']."</td>";
+        echo"<td>".$rowxp7['expenseType']."</td>";
+        $mxp7= number_format($rowxp7['expenseAmount']);
+        echo"<td>".$mxp7."</td>";
+         echo"<td>".$rowxp7['date']."</td>";
+        echo"<td>".$rowxp7['personResponsible']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no expense record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no expense record for July ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  
 			  //getting monthly income
 			  echo"<p style='color:blue;font-size:16pt'>Income</p></br>";
-			  $d6= mysqli_query($con,"select * from income where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numd6=mysqli_num_rows($d6);
-			  if($numd6>0){
+			  $d7= mysqli_query($con,"select * from income where MONTH(date)='07' and YEAR(date)='$yr'");
+		      $numd7=mysqli_num_rows($d7);
+			  if($numd7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>incomeId</td>";
@@ -2698,29 +2698,29 @@ echo"</table></br>";
     echo"<td>incomeAmount</td>";
     echo"<td>Date</td>";
     echo"</tr>";
-	while($rowinc6 = mysqli_fetch_array($d6)){
+	while($rowinc7 = mysqli_fetch_array($d7)){
 		echo"<tr>";
-        echo"<td>".$rowinc6['incomeId']."</td>";
-        echo"<td>".$rowinc6['receiptNo']."</td>";
-        $minc6= number_format($rowinc6['incomeAmount']);
-        echo"<td>".$rowinc6['typeOfIncome']."</td>";
-        echo"<td>".$rowinc6['receivedFrom']."</td>";
-		echo"<td>".$minc6."</td>";
-		echo"<td>".$rowinc6['date']."</td>";
+        echo"<td>".$rowinc7['incomeId']."</td>";
+        echo"<td>".$rowinc7['receiptNo']."</td>";
+        $minc7= number_format($rowinc7['incomeAmount']);
+        echo"<td>".$rowinc7['typeOfIncome']."</td>";
+        echo"<td>".$rowinc7['receivedFrom']."</td>";
+		echo"<td>".$minc7."</td>";
+		echo"<td>".$rowinc7['date']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Income record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Income record for July ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly shares
 			  echo"<p style='color:green;font-size:17pt'>Shares</p></br>";
-			  $e6= mysqli_query($con,"select * from share where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $nume6=mysqli_num_rows($e6);
-			  if($nume6>0){
+			  $e7= mysqli_query($con,"select * from share where MONTH(date)='07' and YEAR(date)='$yr'");
+		      $nume7=mysqli_num_rows($e7);
+			  if($nume7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>shareID</td>";
@@ -2732,31 +2732,31 @@ echo"</table></br>";
 	echo"<td>date</td>";
     echo"<td>teller</td>";
     echo"</tr>";
-	while($rowsh6 = mysqli_fetch_array($e6)){
+	while($rowsh7 = mysqli_fetch_array($e7)){
 		echo"<tr>";
-        echo"<td>".$rowsh6['shareID']."</td>";
-        echo"<td>".number_format($rowsh6['amountPaid'])."</td>";
-        $msh6= number_format($rowsh6['totalAmount']);
-        echo"<td>".$msh6."</td>";
-        echo"<td>".number_format($rowsh6['numberOfShares'])."</td>";
-		echo"<td>".number_format($rowsh6['totalnumberOfShares'])."</td>";
-		echo"<td>".$rowsh6['AccountNo']."</td>";
-		echo"<td>".$rowsh6['date']."</td>";
-		echo"<td>".$rowsh6['teller']."</td>";
+        echo"<td>".$rowsh7['shareID']."</td>";
+        echo"<td>".number_format($rowsh7['amountPaid'])."</td>";
+        $msh7= number_format($rowsh7['totalAmount']);
+        echo"<td>".$msh7."</td>";
+        echo"<td>".number_format($rowsh7['numberOfShares'])."</td>";
+		echo"<td>".number_format($rowsh7['totalnumberOfShares'])."</td>";
+		echo"<td>".$rowsh7['AccountNo']."</td>";
+		echo"<td>".$rowsh7['date']."</td>";
+		echo"<td>".$rowsh7['teller']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-		echo"<p style='color:red;font-size:15pt'>no Share record for June ".$yr."</p></br>";  
+		echo"<p style='color:red;font-size:15pt'>no Share record for July ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting customers registered in a specific month
 			  echo"<p style='color:green;font-size:17pt'>Members Registered</p></br>";
-			   $f6= mysqli_query($con,"select * from customer where MONTH(custSince)='06' and YEAR(custSince)='$yr'");
-            $numf6=mysqli_num_rows($f6);
-     		  if($numf6>0){
+			   $f7= mysqli_query($con,"select * from customer where MONTH(custSince)='07' and YEAR(custSince)='$yr'");
+            $numf7=mysqli_num_rows($f7);
+     		  if($numf7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Account NO.</td>";
@@ -2778,42 +2778,42 @@ echo"</table></br>";
              echo"<td>Date of joining</td>";
              echo"<td>Account Balance</td>";
     echo"</tr>";
-	while($rowcust6 = mysqli_fetch_array($f6)){
+	while($rowcust7 = mysqli_fetch_array($f7)){
 		echo"<tr>";
-        echo"<td>".$rowcust6['AccountNo']."</td>";
-        echo"<td>".$rowcust6['Name']."</td>";
-        echo"<td>".$rowcust6['custDob']."</td>";
+        echo"<td>".$rowcust7['AccountNo']."</td>";
+        echo"<td>".$rowcust7['Name']."</td>";
+        echo"<td>".$rowcust7['custDob']."</td>";
         
-        echo"<td>".$rowcust6['custsexId']."</td>";
-        echo"<td>".$rowcust6['custAddress']."</td>";
-        echo"<td>".$rowcust6['custPhone']."</td>";
-        echo"<td>".$rowcust6['custEmail']."</td>";
-        echo"<td>".$rowcust6['custOccup']."</td>";
-        echo"<td>".$rowcust6['custmarriedId']."</td>";
-        echo"<td>".$rowcust6['custHeir']."</td>";
-        echo"<td>".$rowcust6['custHeirrel']."</td>";
-        echo"<td>".$rowcust6['placeOfBirth']."</td>";
-        echo"<td>".$rowcust6['village']."</td>";
-        echo"<td>".$rowcust6['parish']."</td>";
-        echo"<td>".$rowcust6['subcounty']."</td>";
-        echo"<td>".$rowcust6['district']."</td>";
-        echo"<td>".$rowcust6['custSince']."</td>";
-        $blcust6=number_format($rowcust6['acountBalance']);
-        echo"<td>".$blcust6."</td>";
+        echo"<td>".$rowcust7['custsexId']."</td>";
+        echo"<td>".$rowcust7['custAddress']."</td>";
+        echo"<td>".$rowcust7['custPhone']."</td>";
+        echo"<td>".$rowcust7['custEmail']."</td>";
+        echo"<td>".$rowcust7['custOccup']."</td>";
+        echo"<td>".$rowcust7['custmarriedId']."</td>";
+        echo"<td>".$rowcust7['custHeir']."</td>";
+        echo"<td>".$rowcust7['custHeirrel']."</td>";
+        echo"<td>".$rowcust7['placeOfBirth']."</td>";
+        echo"<td>".$rowcust7['village']."</td>";
+        echo"<td>".$rowcust7['parish']."</td>";
+        echo"<td>".$rowcust7['subcounty']."</td>";
+        echo"<td>".$rowcust7['district']."</td>";
+        echo"<td>".$rowcust7['custSince']."</td>";
+        $blcust7=number_format($rowcust7['acountBalance']);
+        echo"<td>".$blcust7."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Member was registered in July ".$yr."</p></br>";  
 			  }			
 			 
 			 
 			   //getting monthly loans
 			   echo"<p style='color:green;font-size:17pt'>Loans given out</p></br>";
-			  $g6= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='06' and YEAR(dateOfApproval )='$yr'");
-		      $numg6=mysqli_num_rows($g6);
-     		  if($numg6>0){
+			  $g7= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='07' and YEAR(dateOfApproval )='$yr'");
+		      $numg7=mysqli_num_rows($g7);
+     		  if($numg7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Loan id.</td>";
@@ -2830,40 +2830,40 @@ echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr.
 			echo"<td>Fine</td>";
             echo"<td>AccountNo</td>";
     echo"</tr>";
-	while($rowln6 = mysqli_fetch_array($g6)){
+	while($rowln7 = mysqli_fetch_array($g7)){
 		echo"<tr>";
-       echo"<td>".$rowln6['loanId']."</td>";
-        echo"<td>".$rowln6['Name']."</td>";
-        $m6= number_format($rowln6['approvedAmount']);
-        echo"<td>".$m6."</td>";
-        $pn6=number_format($rowln6['actualAmount']);
-         echo"<td>".$pn6."</td>";
-        echo"<td>".$rowln6['dateOfApproval']."</td>";
-		echo"<td>".$rowln6['DueDate']."</td>";
-        echo"<td>".$rowln6['status']."</td>";
-         echo"<td>".$rowln6['loansOfficer']."</td>";
-		 $mpt6= number_format($rowln6['monthlyInstalment']);
-        echo"<td>".$mpt6."</td>";
-        $blc6= number_format($rowln6['balance']);
-        echo"<td>".$blc6."</td>";
-        echo"<td>".$rowln6['period']."</td>";
-		$fn6= number_format($rowln6['fine']);
-		echo"<td>".$fn6."</td>";
-        echo"<td>".$rowln6['AccountNo']."</td>";
+       echo"<td>".$rowln7['loanId']."</td>";
+        echo"<td>".$rowln7['Name']."</td>";
+        $m7= number_format($rowln7['approvedAmount']);
+        echo"<td>".$m7."</td>";
+        $pn7=number_format($rowln7['actualAmount']);
+         echo"<td>".$pn7."</td>";
+        echo"<td>".$rowln7['dateOfApproval']."</td>";
+		echo"<td>".$rowln7['DueDate']."</td>";
+        echo"<td>".$rowln7['status']."</td>";
+         echo"<td>".$rowln7['loansOfficer']."</td>";
+		 $mpt7= number_format($rowln7['monthlyInstalment']);
+        echo"<td>".$mpt7."</td>";
+        $blc7= number_format($rowln7['balance']);
+        echo"<td>".$blc7."</td>";
+        echo"<td>".$rowln7['period']."</td>";
+		$fn7= number_format($rowln7['fine']);
+		echo"<td>".$fn7."</td>";
+        echo"<td>".$rowln7['AccountNo']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no loan was given out in June".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no loan was given out in July ".$yr."</p></br>";  
 			  }
 
 			 
 			  //getting monthly loanRepayment
 			  echo"<p style='color:green;font-size:17pt'>Loan Repayment</p></br>";
-			  $h6= mysqli_query($con,"select * from loanrepayment where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numh6=mysqli_num_rows($h6);
-     		  if($numh6>0){
+			  $h7= mysqli_query($con,"select * from loanrepayment where MONTH(date)='07' and YEAR(date)='$yr'");
+		      $numh7=mysqli_num_rows($h7);
+     		  if($numh7>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>repaymentId</td>";
@@ -2879,27 +2879,26 @@ echo"</table></br>";
              echo"<td>AccountNo</td>";
             echo"<td>loanId</td>";
             echo"</tr>";
-	while($rowrep6 = mysqli_fetch_array($h6)){
+	while($rowrep7 = mysqli_fetch_array($h7)){
 		echo"<tr>";
-        echo"<td>".$rowrep6['repaymentId']."</td>";
-        echo"<td>".$rowrep6['date']."</td>";
-        echo"<td>".number_format($rowrep6['loanAmount'])."</td>";
-        
-        echo"<td>".number_format($rowrep6['principlePayment'])."</td>";
-        echo"<td>".number_format($rowrep6['intrest'])."</td>";
-        echo"<td>".number_format($rowrep6['fine'])."</td>";
-        echo"<td>".number_format($rowrep6['totalPay'])."</td>";
-        echo"<td>".number_format($rowrep6['balance'])."</td>";
-        echo"<td>".$rowrep6['receivedBy']."</td>";
-        echo"<td>".$rowrep6['paidBy']."</td>";
-        echo"<td>".$rowrep6['AccountNo']."</td>";
-        echo"<td>".$rowrep6['loanId']."</td>";
+        echo"<td>".$rowrep7['repaymentId']."</td>";
+        echo"<td>".$rowrep7['date']."</td>";
+        echo"<td>".number_format($rowrep7['loanAmount'])."</td>";
+        echo"<td>".number_format($rowrep7['principlePayment'])."</td>";
+        echo"<td>".number_format($rowrep7['intrest'])."</td>";
+        echo"<td>".number_format($rowrep7['fine'])."</td>";
+        echo"<td>".number_format($rowrep7['totalPay'])."</td>";
+        echo"<td>".number_format($rowrep7['balance'])."</td>";
+        echo"<td>".$rowrep7['receivedBy']."</td>";
+        echo"<td>".$rowrep7['paidBy']."</td>";
+        echo"<td>".$rowrep7['AccountNo']."</td>";
+        echo"<td>".$rowrep7['loanId']."</td>";
         echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for July ".$yr."</p></br>";  
 			  }			
 			 
 		echo"<p style='font-size:25pt'>August</p></br>";
@@ -2907,9 +2906,9 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 		echo"<p style='color:green;font-size:17pt'>SAVINGS</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Deposit</p></br>";
 			  //getting monthly deposits
-			 $a6= mysqli_query($con,"select * from deposit where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numa6=mysqli_num_rows($a6);
-			  if($numa6>0){
+			 $a8= mysqli_query($con,"select * from deposit where MONTH(date)='08' and YEAR(date)='$yr'");
+		      $numa8=mysqli_num_rows($a8);
+			  if($numa8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Deposit id.</td>";
@@ -2921,20 +2920,20 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
              echo"<td>Account Balance</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowd6 = mysqli_fetch_array($a6)){
+				while($rowd8 = mysqli_fetch_array($a8)){
 		echo"<tr>";
-        echo"<td>".$rowd6['depositId']."</td>";
-        echo"<td>".$rowd['Name']."</td>";
-        $m6= number_format($rowd6['depositAmount']);
-        echo"<td>".$m6."</td>";
-         echo"<td>".$rowd6['date']."</td>";
-        echo"<td>".$rowd6['paidBy']."</td>";
+        echo"<td>".$rowd8['depositId']."</td>";
+        echo"<td>".$rowd8['Name']."</td>";
+        $m8= number_format($rowd8['depositAmount']);
+        echo"<td>".$m8."</td>";
+         echo"<td>".$rowd8['date']."</td>";
+        echo"<td>".$rowd8['paidBy']."</td>";
         
-       echo"<td>".$rowd6['tellerName']."</td>";
+       echo"<td>".$rowd8['tellerName']."</td>";
         
-        $n6= number_format($rowd6['balance']);
-        echo"<td>".$n6."</td>";
-        echo"<td>".$rowd6['AccountNo']."</td>";
+        $n8= number_format($rowd8['balance']);
+        echo"<td>".$n8."</td>";
+        echo"<td>".$rowd8['AccountNo']."</td>";
         
        
        
@@ -2943,15 +2942,15 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Deposit record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Deposit record for August ".$yr."</p></br>";  
 			  }
 			  
 			 
 			 //getting monthly withdraws
 			  echo"<p style='color:blue;font-size:16pt'>Withdrawals</p></br>";
-			   $b6= mysqli_query($con,"select * from withdraw where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numb6=mysqli_num_rows($b6);
-			  if($numb6>0){
+			   $b8= mysqli_query($con,"select * from withdraw where MONTH(date)='08' and YEAR(date)='$yr'");
+		      $numb8=mysqli_num_rows($b8);
+			  if($numb8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>withdrawId</td>";
@@ -2963,19 +2962,19 @@ echo"</table></br>";
              echo"<td>mgtFees</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowth6 = mysqli_fetch_array($b6)){
+				while($rowth8 = mysqli_fetch_array($b8)){
 		echo"<tr>";
-        echo"<td>".$rowth6['withdrawId']."</td>";
-        echo"<td>".$rowth6['Name']."</td>";
-        $mth6= number_format($rowth6['withdrawAmount']);
-        echo"<td>".$mth6."</td>";
-         echo"<td>".$rowth6['date']."</td>";
-        echo"<td>".$rowth6['tellerName']."</td>";
-        $nth6= number_format($rowth6['balance']);
-        echo"<td>".$nth6."</td>";
-		$mgth6= number_format($rowth6['mgtFees']);
-        echo"<td>".$mgth6."</td>";
-        echo"<td>".$rowth6['AccountNo']."</td>";
+        echo"<td>".$rowth8['withdrawId']."</td>";
+        echo"<td>".$rowth8['Name']."</td>";
+        $mth8= number_format($rowth8['withdrawAmount']);
+        echo"<td>".$mth8."</td>";
+         echo"<td>".$rowth8['date']."</td>";
+        echo"<td>".$rowth8['tellerName']."</td>";
+        $nth8= number_format($rowth8['balance']);
+        echo"<td>".$nth8."</td>";
+		$mgth8= number_format($rowth8['mgtFees']);
+        echo"<td>".$mgth8."</td>";
+        echo"<td>".$rowth8['AccountNo']."</td>";
         
        
        
@@ -2984,16 +2983,16 @@ echo"</table></br>";
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Withdraw record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Withdraw record for August ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly expenses
 			  echo"<p style='color:green;font-size:17pt'>INCOME STATEMENT</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Expenses</p></br>";
-			  $c6= mysqli_query($con,"select * from expenses where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numc6=mysqli_num_rows($c6);
-			  if($numc6>0){
+			  $c8= mysqli_query($con,"select * from expenses where MONTH(date)='08' and YEAR(date)='$yr'");
+		      $numc8=mysqli_num_rows($c8);
+			  if($numc8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>VoucherNo</td>";
@@ -3002,29 +3001,29 @@ echo"</table></br>";
     echo"<td>Date </td>";
              echo"<td>personResponsible</td>";
              echo"</tr>";
-				while($rowxp6 = mysqli_fetch_array($c6)){
+				while($rowxp8 = mysqli_fetch_array($c8)){
 		echo"<tr>";
-        echo"<td>".$rowxp6['VoucherNo']."</td>";
-        echo"<td>".$rowxp6['expenseType']."</td>";
-        $mxp6= number_format($rowxp6['expenseAmount']);
-        echo"<td>".$mxp6."</td>";
-         echo"<td>".$rowxp6['date']."</td>";
-        echo"<td>".$rowxp6['personResponsible']."</td>";
+        echo"<td>".$rowxp8['VoucherNo']."</td>";
+        echo"<td>".$rowxp8['expenseType']."</td>";
+        $mxp8= number_format($rowxp8['expenseAmount']);
+        echo"<td>".$mxp8."</td>";
+         echo"<td>".$rowxp8['date']."</td>";
+        echo"<td>".$rowxp8['personResponsible']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no expense record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no expense record for August ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  
 			  //getting monthly income
 			  echo"<p style='color:blue;font-size:16pt'>Income</p></br>";
-			  $d6= mysqli_query($con,"select * from income where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numd6=mysqli_num_rows($d6);
-			  if($numd6>0){
+			  $d8= mysqli_query($con,"select * from income where MONTH(date)='08' and YEAR(date)='$yr'");
+		      $numd8=mysqli_num_rows($d8);
+			  if($numd8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>incomeId</td>";
@@ -3034,29 +3033,29 @@ echo"</table></br>";
     echo"<td>incomeAmount</td>";
     echo"<td>Date</td>";
     echo"</tr>";
-	while($rowinc6 = mysqli_fetch_array($d6)){
+	while($rowinc8 = mysqli_fetch_array($d8)){
 		echo"<tr>";
-        echo"<td>".$rowinc6['incomeId']."</td>";
-        echo"<td>".$rowinc6['receiptNo']."</td>";
-        $minc6= number_format($rowinc6['incomeAmount']);
-        echo"<td>".$rowinc6['typeOfIncome']."</td>";
-        echo"<td>".$rowinc6['receivedFrom']."</td>";
-		echo"<td>".$minc6."</td>";
-		echo"<td>".$rowinc6['date']."</td>";
+        echo"<td>".$rowinc8['incomeId']."</td>";
+        echo"<td>".$rowinc8['receiptNo']."</td>";
+        $minc8= number_format($rowinc8['incomeAmount']);
+        echo"<td>".$rowinc8['typeOfIncome']."</td>";
+        echo"<td>".$rowinc8['receivedFrom']."</td>";
+		echo"<td>".$minc8."</td>";
+		echo"<td>".$rowinc8['date']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Income record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Income record for August ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly shares
 			  echo"<p style='color:green;font-size:17pt'>Shares</p></br>";
-			  $e6= mysqli_query($con,"select * from share where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $nume6=mysqli_num_rows($e6);
-			  if($nume6>0){
+			  $e8= mysqli_query($con,"select * from share where MONTH(date)='08' and YEAR(date)='$yr'");
+		      $nume8=mysqli_num_rows($e8);
+			  if($nume8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>shareID</td>";
@@ -3068,31 +3067,31 @@ echo"</table></br>";
 	echo"<td>date</td>";
     echo"<td>teller</td>";
     echo"</tr>";
-	while($rowsh6 = mysqli_fetch_array($e6)){
+	while($rowsh8 = mysqli_fetch_array($e8)){
 		echo"<tr>";
-        echo"<td>".$rowsh6['shareID']."</td>";
-        echo"<td>".number_format($rowsh6['amountPaid'])."</td>";
-        $msh6= number_format($rowsh6['totalAmount']);
-        echo"<td>".$msh6."</td>";
-        echo"<td>".number_format($rowsh6['numberOfShares'])."</td>";
-		echo"<td>".number_format($rowsh6['totalnumberOfShares'])."</td>";
-		echo"<td>".$rowsh6['AccountNo']."</td>";
-		echo"<td>".$rowsh6['date']."</td>";
-		echo"<td>".$rowsh6['teller']."</td>";
+        echo"<td>".$rowsh8['shareID']."</td>";
+        echo"<td>".number_format($rowsh8['amountPaid'])."</td>";
+        $msh8= number_format($rowsh8['totalAmount']);
+        echo"<td>".$msh8."</td>";
+        echo"<td>".number_format($rowsh8['numberOfShares'])."</td>";
+		echo"<td>".number_format($rowsh8['totalnumberOfShares'])."</td>";
+		echo"<td>".$rowsh8['AccountNo']."</td>";
+		echo"<td>".$rowsh8['date']."</td>";
+		echo"<td>".$rowsh8['teller']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-		echo"<p style='color:red;font-size:15pt'>no Share record for June ".$yr."</p></br>";  
+		echo"<p style='color:red;font-size:15pt'>no Share record for August ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting customers registered in a specific month
 			  echo"<p style='color:green;font-size:17pt'>Members Registered</p></br>";
-			   $f6= mysqli_query($con,"select * from customer where MONTH(custSince)='06' and YEAR(custSince)='$yr'");
-            $numf6=mysqli_num_rows($f6);
-     		  if($numf6>0){
+			   $f8= mysqli_query($con,"select * from customer where MONTH(custSince)='08' and YEAR(custSince)='$yr'");
+            $numf8=mysqli_num_rows($f8);
+     		  if($numf8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Account NO.</td>";
@@ -3114,42 +3113,42 @@ echo"</table></br>";
              echo"<td>Date of joining</td>";
              echo"<td>Account Balance</td>";
     echo"</tr>";
-	while($rowcust6 = mysqli_fetch_array($f6)){
+	while($rowcust8 = mysqli_fetch_array($f8)){
 		echo"<tr>";
-        echo"<td>".$rowcust6['AccountNo']."</td>";
-        echo"<td>".$rowcust6['Name']."</td>";
-        echo"<td>".$rowcust6['custDob']."</td>";
+        echo"<td>".$rowcust8['AccountNo']."</td>";
+        echo"<td>".$rowcust8['Name']."</td>";
+        echo"<td>".$rowcust8['custDob']."</td>";
         
-        echo"<td>".$rowcust6['custsexId']."</td>";
-        echo"<td>".$rowcust6['custAddress']."</td>";
-        echo"<td>".$rowcust6['custPhone']."</td>";
-        echo"<td>".$rowcust6['custEmail']."</td>";
-        echo"<td>".$rowcust6['custOccup']."</td>";
-        echo"<td>".$rowcust6['custmarriedId']."</td>";
-        echo"<td>".$rowcust6['custHeir']."</td>";
-        echo"<td>".$rowcust6['custHeirrel']."</td>";
-        echo"<td>".$rowcust6['placeOfBirth']."</td>";
-        echo"<td>".$rowcust6['village']."</td>";
-        echo"<td>".$rowcust6['parish']."</td>";
-        echo"<td>".$rowcust6['subcounty']."</td>";
-        echo"<td>".$rowcust6['district']."</td>";
-        echo"<td>".$rowcust6['custSince']."</td>";
-        $blcust6=number_format($rowcust6['acountBalance']);
-        echo"<td>".$blcust6."</td>";
+        echo"<td>".$rowcust8['custsexId']."</td>";
+        echo"<td>".$rowcust8['custAddress']."</td>";
+        echo"<td>".$rowcust8['custPhone']."</td>";
+        echo"<td>".$rowcust8['custEmail']."</td>";
+        echo"<td>".$rowcust8['custOccup']."</td>";
+        echo"<td>".$rowcust8['custmarriedId']."</td>";
+        echo"<td>".$rowcust8['custHeir']."</td>";
+        echo"<td>".$rowcust8['custHeirrel']."</td>";
+        echo"<td>".$rowcust8['placeOfBirth']."</td>";
+        echo"<td>".$rowcust8['village']."</td>";
+        echo"<td>".$rowcust8['parish']."</td>";
+        echo"<td>".$rowcust8['subcounty']."</td>";
+        echo"<td>".$rowcust8['district']."</td>";
+        echo"<td>".$rowcust8['custSince']."</td>";
+        $blcust8=number_format($rowcust8['acountBalance']);
+        echo"<td>".$blcust8."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Member was registered in August ".$yr."</p></br>";  
 			  }			
 			 
 			 
 			   //getting monthly loans
 			   echo"<p style='color:green;font-size:17pt'>Loans given out</p></br>";
-			  $g6= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='06' and YEAR(dateOfApproval )='$yr'");
-		      $numg6=mysqli_num_rows($g6);
-     		  if($numg6>0){
+			  $g8= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='08' and YEAR(dateOfApproval )='$yr'");
+		      $numg8=mysqli_num_rows($g8);
+     		  if($numg8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Loan id.</td>";
@@ -3166,40 +3165,40 @@ echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr.
 			echo"<td>Fine</td>";
             echo"<td>AccountNo</td>";
     echo"</tr>";
-	while($rowln6 = mysqli_fetch_array($g6)){
+	while($rowln8 = mysqli_fetch_array($g8)){
 		echo"<tr>";
-       echo"<td>".$rowln6['loanId']."</td>";
-        echo"<td>".$rowln6['Name']."</td>";
-        $m6= number_format($rowln6['approvedAmount']);
-        echo"<td>".$m6."</td>";
-        $pn6=number_format($rowln6['actualAmount']);
-         echo"<td>".$pn6."</td>";
-        echo"<td>".$rowln6['dateOfApproval']."</td>";
-		echo"<td>".$rowln6['DueDate']."</td>";
-        echo"<td>".$rowln6['status']."</td>";
-         echo"<td>".$rowln6['loansOfficer']."</td>";
-		 $mpt6= number_format($rowln6['monthlyInstalment']);
-        echo"<td>".$mpt6."</td>";
-        $blc6= number_format($rowln6['balance']);
-        echo"<td>".$blc6."</td>";
-        echo"<td>".$rowln6['period']."</td>";
-		$fn6= number_format($rowln6['fine']);
-		echo"<td>".$fn6."</td>";
-        echo"<td>".$rowln6['AccountNo']."</td>";
+       echo"<td>".$rowln8['loanId']."</td>";
+        echo"<td>".$rowln8['Name']."</td>";
+        $m8= number_format($rowln8['approvedAmount']);
+        echo"<td>".$m8."</td>";
+        $pn8=number_format($rowln8['actualAmount']);
+         echo"<td>".$pn8."</td>";
+        echo"<td>".$rowln8['dateOfApproval']."</td>";
+		echo"<td>".$rowln8['DueDate']."</td>";
+        echo"<td>".$rowln8['status']."</td>";
+         echo"<td>".$rowln8['loansOfficer']."</td>";
+		 $mpt8= number_format($rowln8['monthlyInstalment']);
+        echo"<td>".$mpt8."</td>";
+        $blc8= number_format($rowln8['balance']);
+        echo"<td>".$blc8."</td>";
+        echo"<td>".$rowln8['period']."</td>";
+		$fn8= number_format($rowln8['fine']);
+		echo"<td>".$fn8."</td>";
+        echo"<td>".$rowln8['AccountNo']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no loan was given out in June".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no loan was given out in August ".$yr."</p></br>";  
 			  }
 
 			 
 			  //getting monthly loanRepayment
 			  echo"<p style='color:green;font-size:17pt'>Loan Repayment</p></br>";
-			  $h6= mysqli_query($con,"select * from loanrepayment where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numh6=mysqli_num_rows($h6);
-     		  if($numh6>0){
+			  $h8= mysqli_query($con,"select * from loanrepayment where MONTH(date)='08' and YEAR(date)='$yr'");
+		      $numh8=mysqli_num_rows($h8);
+     		  if($numh8>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>repaymentId</td>";
@@ -3215,27 +3214,27 @@ echo"</table></br>";
              echo"<td>AccountNo</td>";
             echo"<td>loanId</td>";
             echo"</tr>";
-	while($rowrep6 = mysqli_fetch_array($h6)){
+	while($rowrep8 = mysqli_fetch_array($h8)){
 		echo"<tr>";
-        echo"<td>".$rowrep6['repaymentId']."</td>";
-        echo"<td>".$rowrep6['date']."</td>";
-        echo"<td>".number_format($rowrep6['loanAmount'])."</td>";
+        echo"<td>".$rowrep8['repaymentId']."</td>";
+        echo"<td>".$rowrep8['date']."</td>";
+        echo"<td>".number_format($rowrep8['loanAmount'])."</td>";
         
-        echo"<td>".number_format($rowrep6['principlePayment'])."</td>";
-        echo"<td>".number_format($rowrep6['intrest'])."</td>";
-        echo"<td>".number_format($rowrep6['fine'])."</td>";
-        echo"<td>".number_format($rowrep6['totalPay'])."</td>";
-        echo"<td>".number_format($rowrep6['balance'])."</td>";
-        echo"<td>".$rowrep6['receivedBy']."</td>";
-        echo"<td>".$rowrep6['paidBy']."</td>";
-        echo"<td>".$rowrep6['AccountNo']."</td>";
-        echo"<td>".$rowrep6['loanId']."</td>";
+        echo"<td>".number_format($rowrep8['principlePayment'])."</td>";
+        echo"<td>".number_format($rowrep8['intrest'])."</td>";
+        echo"<td>".number_format($rowrep8['fine'])."</td>";
+        echo"<td>".number_format($rowrep8['totalPay'])."</td>";
+        echo"<td>".number_format($rowrep8['balance'])."</td>";
+        echo"<td>".$rowrep8['receivedBy']."</td>";
+        echo"<td>".$rowrep8['paidBy']."</td>";
+        echo"<td>".$rowrep8['AccountNo']."</td>";
+        echo"<td>".$rowrep8['loanId']."</td>";
         echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for August ".$yr."</p></br>";  
 			  }			
 			 
 		echo"<p style='font-size:25pt'>September</p></br>";
@@ -3243,9 +3242,9 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 		echo"<p style='color:green;font-size:17pt'>SAVINGS</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Deposit</p></br>";
 			  //getting monthly deposits
-			 $a6= mysqli_query($con,"select * from deposit where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numa6=mysqli_num_rows($a6);
-			  if($numa6>0){
+			 $a9= mysqli_query($con,"select * from deposit where MONTH(date)='09' and YEAR(date)='$yr'");
+		      $numa9=mysqli_num_rows($a9);
+			  if($numa9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Deposit id.</td>";
@@ -3257,20 +3256,20 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
              echo"<td>Account Balance</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowd6 = mysqli_fetch_array($a6)){
+				while($rowd9 = mysqli_fetch_array($a9)){
 		echo"<tr>";
-        echo"<td>".$rowd6['depositId']."</td>";
-        echo"<td>".$rowd['Name']."</td>";
-        $m6= number_format($rowd6['depositAmount']);
-        echo"<td>".$m6."</td>";
-         echo"<td>".$rowd6['date']."</td>";
-        echo"<td>".$rowd6['paidBy']."</td>";
+        echo"<td>".$rowd9['depositId']."</td>";
+        echo"<td>".$rowd9['Name']."</td>";
+        $m9= number_format($rowd9['depositAmount']);
+        echo"<td>".$m9."</td>";
+         echo"<td>".$rowd9['date']."</td>";
+        echo"<td>".$rowd9['paidBy']."</td>";
         
-       echo"<td>".$rowd6['tellerName']."</td>";
+       echo"<td>".$rowd9['tellerName']."</td>";
         
-        $n6= number_format($rowd6['balance']);
-        echo"<td>".$n6."</td>";
-        echo"<td>".$rowd6['AccountNo']."</td>";
+        $n9= number_format($rowd9['balance']);
+        echo"<td>".$n9."</td>";
+        echo"<td>".$rowd9['AccountNo']."</td>";
         
        
        
@@ -3279,15 +3278,15 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Deposit record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Deposit record for September ".$yr."</p></br>";  
 			  }
 			  
 			 
 			 //getting monthly withdraws
 			  echo"<p style='color:blue;font-size:16pt'>Withdrawals</p></br>";
-			   $b6= mysqli_query($con,"select * from withdraw where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numb6=mysqli_num_rows($b6);
-			  if($numb6>0){
+			   $b9= mysqli_query($con,"select * from withdraw where MONTH(date)='09' and YEAR(date)='$yr'");
+		      $numb9=mysqli_num_rows($b9);
+			  if($numb9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>withdrawId</td>";
@@ -3299,19 +3298,19 @@ echo"</table></br>";
              echo"<td>mgtFees</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowth6 = mysqli_fetch_array($b6)){
+				while($rowth9 = mysqli_fetch_array($b9)){
 		echo"<tr>";
-        echo"<td>".$rowth6['withdrawId']."</td>";
-        echo"<td>".$rowth6['Name']."</td>";
-        $mth6= number_format($rowth6['withdrawAmount']);
-        echo"<td>".$mth6."</td>";
-         echo"<td>".$rowth6['date']."</td>";
-        echo"<td>".$rowth6['tellerName']."</td>";
-        $nth6= number_format($rowth6['balance']);
-        echo"<td>".$nth6."</td>";
-		$mgth6= number_format($rowth6['mgtFees']);
-        echo"<td>".$mgth6."</td>";
-        echo"<td>".$rowth6['AccountNo']."</td>";
+        echo"<td>".$rowth9['withdrawId']."</td>";
+        echo"<td>".$rowth9['Name']."</td>";
+        $mth9= number_format($rowth9['withdrawAmount']);
+        echo"<td>".$mth9."</td>";
+         echo"<td>".$rowth9['date']."</td>";
+        echo"<td>".$rowth9['tellerName']."</td>";
+        $nth9= number_format($rowth9['balance']);
+        echo"<td>".$nth9."</td>";
+		$mgth9= number_format($rowth9['mgtFees']);
+        echo"<td>".$mgth9."</td>";
+        echo"<td>".$rowth9['AccountNo']."</td>";
         
        
        
@@ -3320,16 +3319,16 @@ echo"</table></br>";
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Withdraw record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Withdraw record for September ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly expenses
 			  echo"<p style='color:green;font-size:17pt'>INCOME STATEMENT</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Expenses</p></br>";
-			  $c6= mysqli_query($con,"select * from expenses where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numc6=mysqli_num_rows($c6);
-			  if($numc6>0){
+			  $c9= mysqli_query($con,"select * from expenses where MONTH(date)='09' and YEAR(date)='$yr'");
+		      $numc9=mysqli_num_rows($c9);
+			  if($numc9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>VoucherNo</td>";
@@ -3338,29 +3337,29 @@ echo"</table></br>";
     echo"<td>Date </td>";
              echo"<td>personResponsible</td>";
              echo"</tr>";
-				while($rowxp6 = mysqli_fetch_array($c6)){
+				while($rowxp9 = mysqli_fetch_array($c9)){
 		echo"<tr>";
-        echo"<td>".$rowxp6['VoucherNo']."</td>";
-        echo"<td>".$rowxp6['expenseType']."</td>";
-        $mxp6= number_format($rowxp6['expenseAmount']);
-        echo"<td>".$mxp6."</td>";
-         echo"<td>".$rowxp6['date']."</td>";
-        echo"<td>".$rowxp6['personResponsible']."</td>";
+        echo"<td>".$rowxp9['VoucherNo']."</td>";
+        echo"<td>".$rowxp9['expenseType']."</td>";
+        $mxp9= number_format($rowxp9['expenseAmount']);
+        echo"<td>".$mxp9."</td>";
+         echo"<td>".$rowxp9['date']."</td>";
+        echo"<td>".$rowxp9['personResponsible']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no expense record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no expense record for September ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  
 			  //getting monthly income
 			  echo"<p style='color:blue;font-size:16pt'>Income</p></br>";
-			  $d6= mysqli_query($con,"select * from income where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numd6=mysqli_num_rows($d6);
-			  if($numd6>0){
+			  $d9= mysqli_query($con,"select * from income where MONTH(date)='09' and YEAR(date)='$yr'");
+		      $numd9=mysqli_num_rows($d9);
+			  if($numd9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>incomeId</td>";
@@ -3370,29 +3369,29 @@ echo"</table></br>";
     echo"<td>incomeAmount</td>";
     echo"<td>Date</td>";
     echo"</tr>";
-	while($rowinc6 = mysqli_fetch_array($d6)){
+	while($rowinc9 = mysqli_fetch_array($d9)){
 		echo"<tr>";
-        echo"<td>".$rowinc6['incomeId']."</td>";
-        echo"<td>".$rowinc6['receiptNo']."</td>";
-        $minc6= number_format($rowinc6['incomeAmount']);
-        echo"<td>".$rowinc6['typeOfIncome']."</td>";
-        echo"<td>".$rowinc6['receivedFrom']."</td>";
-		echo"<td>".$minc6."</td>";
-		echo"<td>".$rowinc6['date']."</td>";
+        echo"<td>".$rowinc9['incomeId']."</td>";
+        echo"<td>".$rowinc9['receiptNo']."</td>";
+        $minc9= number_format($rowinc9['incomeAmount']);
+        echo"<td>".$rowinc9['typeOfIncome']."</td>";
+        echo"<td>".$rowinc9['receivedFrom']."</td>";
+		echo"<td>".$minc9."</td>";
+		echo"<td>".$rowinc9['date']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Income record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Income record for September ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly shares
 			  echo"<p style='color:green;font-size:17pt'>Shares</p></br>";
-			  $e6= mysqli_query($con,"select * from share where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $nume6=mysqli_num_rows($e6);
-			  if($nume6>0){
+			  $e9= mysqli_query($con,"select * from share where MONTH(date)='09' and YEAR(date)='$yr'");
+		      $nume9=mysqli_num_rows($e9);
+			  if($nume9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>shareID</td>";
@@ -3404,31 +3403,31 @@ echo"</table></br>";
 	echo"<td>date</td>";
     echo"<td>teller</td>";
     echo"</tr>";
-	while($rowsh6 = mysqli_fetch_array($e6)){
+	while($rowsh9 = mysqli_fetch_array($e9)){
 		echo"<tr>";
-        echo"<td>".$rowsh6['shareID']."</td>";
-        echo"<td>".number_format($rowsh6['amountPaid'])."</td>";
-        $msh6= number_format($rowsh6['totalAmount']);
-        echo"<td>".$msh6."</td>";
-        echo"<td>".number_format($rowsh6['numberOfShares'])."</td>";
-		echo"<td>".number_format($rowsh6['totalnumberOfShares'])."</td>";
-		echo"<td>".$rowsh6['AccountNo']."</td>";
-		echo"<td>".$rowsh6['date']."</td>";
-		echo"<td>".$rowsh6['teller']."</td>";
+        echo"<td>".$rowsh9['shareID']."</td>";
+        echo"<td>".number_format($rowsh9['amountPaid'])."</td>";
+        $msh9= number_format($rowsh9['totalAmount']);
+        echo"<td>".$msh9."</td>";
+        echo"<td>".number_format($rowsh9['numberOfShares'])."</td>";
+		echo"<td>".number_format($rowsh9['totalnumberOfShares'])."</td>";
+		echo"<td>".$rowsh9['AccountNo']."</td>";
+		echo"<td>".$rowsh9['date']."</td>";
+		echo"<td>".$rowsh9['teller']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-		echo"<p style='color:red;font-size:15pt'>no Share record for June ".$yr."</p></br>";  
+		echo"<p style='color:red;font-size:15pt'>no Share record for September ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting customers registered in a specific month
 			  echo"<p style='color:green;font-size:17pt'>Members Registered</p></br>";
-			   $f6= mysqli_query($con,"select * from customer where MONTH(custSince)='06' and YEAR(custSince)='$yr'");
-            $numf6=mysqli_num_rows($f6);
-     		  if($numf6>0){
+			   $f9= mysqli_query($con,"select * from customer where MONTH(custSince)='09' and YEAR(custSince)='$yr'");
+            $numf9=mysqli_num_rows($f9);
+     		  if($numf9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Account NO.</td>";
@@ -3450,42 +3449,42 @@ echo"</table></br>";
              echo"<td>Date of joining</td>";
              echo"<td>Account Balance</td>";
     echo"</tr>";
-	while($rowcust6 = mysqli_fetch_array($f6)){
+	while($rowcust9 = mysqli_fetch_array($f9)){
 		echo"<tr>";
-        echo"<td>".$rowcust6['AccountNo']."</td>";
-        echo"<td>".$rowcust6['Name']."</td>";
-        echo"<td>".$rowcust6['custDob']."</td>";
+        echo"<td>".$rowcust9['AccountNo']."</td>";
+        echo"<td>".$rowcust9['Name']."</td>";
+        echo"<td>".$rowcust9['custDob']."</td>";
         
-        echo"<td>".$rowcust6['custsexId']."</td>";
-        echo"<td>".$rowcust6['custAddress']."</td>";
-        echo"<td>".$rowcust6['custPhone']."</td>";
-        echo"<td>".$rowcust6['custEmail']."</td>";
-        echo"<td>".$rowcust6['custOccup']."</td>";
-        echo"<td>".$rowcust6['custmarriedId']."</td>";
-        echo"<td>".$rowcust6['custHeir']."</td>";
-        echo"<td>".$rowcust6['custHeirrel']."</td>";
-        echo"<td>".$rowcust6['placeOfBirth']."</td>";
-        echo"<td>".$rowcust6['village']."</td>";
-        echo"<td>".$rowcust6['parish']."</td>";
-        echo"<td>".$rowcust6['subcounty']."</td>";
-        echo"<td>".$rowcust6['district']."</td>";
-        echo"<td>".$rowcust6['custSince']."</td>";
-        $blcust6=number_format($rowcust6['acountBalance']);
-        echo"<td>".$blcust6."</td>";
+        echo"<td>".$rowcust9['custsexId']."</td>";
+        echo"<td>".$rowcust9['custAddress']."</td>";
+        echo"<td>".$rowcust9['custPhone']."</td>";
+        echo"<td>".$rowcust9['custEmail']."</td>";
+        echo"<td>".$rowcust9['custOccup']."</td>";
+        echo"<td>".$rowcust9['custmarriedId']."</td>";
+        echo"<td>".$rowcust9['custHeir']."</td>";
+        echo"<td>".$rowcust9['custHeirrel']."</td>";
+        echo"<td>".$rowcust9['placeOfBirth']."</td>";
+        echo"<td>".$rowcust9['village']."</td>";
+        echo"<td>".$rowcust9['parish']."</td>";
+        echo"<td>".$rowcust9['subcounty']."</td>";
+        echo"<td>".$rowcust9['district']."</td>";
+        echo"<td>".$rowcust9['custSince']."</td>";
+        $blcust9=number_format($rowcust9['acountBalance']);
+        echo"<td>".$blcust9."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Member was registered in September ".$yr."</p></br>";  
 			  }			
 			 
 			 
 			   //getting monthly loans
 			   echo"<p style='color:green;font-size:17pt'>Loans given out</p></br>";
-			  $g6= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='06' and YEAR(dateOfApproval )='$yr'");
-		      $numg6=mysqli_num_rows($g6);
-     		  if($numg6>0){
+			  $g9= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='09' and YEAR(dateOfApproval )='$yr'");
+		      $numg9=mysqli_num_rows($g9);
+     		  if($numg9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Loan id.</td>";
@@ -3502,40 +3501,40 @@ echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr.
 			echo"<td>Fine</td>";
             echo"<td>AccountNo</td>";
     echo"</tr>";
-	while($rowln6 = mysqli_fetch_array($g6)){
+	while($rowln9 = mysqli_fetch_array($g9)){
 		echo"<tr>";
-       echo"<td>".$rowln6['loanId']."</td>";
-        echo"<td>".$rowln6['Name']."</td>";
-        $m6= number_format($rowln6['approvedAmount']);
-        echo"<td>".$m6."</td>";
-        $pn6=number_format($rowln6['actualAmount']);
-         echo"<td>".$pn6."</td>";
-        echo"<td>".$rowln6['dateOfApproval']."</td>";
-		echo"<td>".$rowln6['DueDate']."</td>";
-        echo"<td>".$rowln6['status']."</td>";
-         echo"<td>".$rowln6['loansOfficer']."</td>";
-		 $mpt6= number_format($rowln6['monthlyInstalment']);
-        echo"<td>".$mpt6."</td>";
-        $blc6= number_format($rowln6['balance']);
-        echo"<td>".$blc6."</td>";
-        echo"<td>".$rowln6['period']."</td>";
-		$fn6= number_format($rowln6['fine']);
-		echo"<td>".$fn6."</td>";
-        echo"<td>".$rowln6['AccountNo']."</td>";
+       echo"<td>".$rowln9['loanId']."</td>";
+        echo"<td>".$rowln9['Name']."</td>";
+        $m9= number_format($rowln9['approvedAmount']);
+        echo"<td>".$m9."</td>";
+        $pn9=number_format($rowln9['actualAmount']);
+         echo"<td>".$pn9."</td>";
+        echo"<td>".$rowln9['dateOfApproval']."</td>";
+		echo"<td>".$rowln9['DueDate']."</td>";
+        echo"<td>".$rowln9['status']."</td>";
+         echo"<td>".$rowln9['loansOfficer']."</td>";
+		 $mpt9= number_format($rowln9['monthlyInstalment']);
+        echo"<td>".$mpt9."</td>";
+        $blc9= number_format($rowln9['balance']);
+        echo"<td>".$blc9."</td>";
+        echo"<td>".$rowln9['period']."</td>";
+		$fn9= number_format($rowln9['fine']);
+		echo"<td>".$fn9."</td>";
+        echo"<td>".$rowln9['AccountNo']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no loan was given out in June".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no loan was given out in September".$yr."</p></br>";  
 			  }
 
 			 
 			  //getting monthly loanRepayment
 			  echo"<p style='color:green;font-size:17pt'>Loan Repayment</p></br>";
-			  $h6= mysqli_query($con,"select * from loanrepayment where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numh6=mysqli_num_rows($h6);
-     		  if($numh6>0){
+			  $h9= mysqli_query($con,"select * from loanrepayment where MONTH(date)='09' and YEAR(date)='$yr'");
+		      $numh9=mysqli_num_rows($h9);
+     		  if($numh9>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>repaymentId</td>";
@@ -3551,27 +3550,27 @@ echo"</table></br>";
              echo"<td>AccountNo</td>";
             echo"<td>loanId</td>";
             echo"</tr>";
-	while($rowrep6 = mysqli_fetch_array($h6)){
+	while($rowrep9 = mysqli_fetch_array($h9)){
 		echo"<tr>";
-        echo"<td>".$rowrep6['repaymentId']."</td>";
-        echo"<td>".$rowrep6['date']."</td>";
-        echo"<td>".number_format($rowrep6['loanAmount'])."</td>";
+        echo"<td>".$rowrep9['repaymentId']."</td>";
+        echo"<td>".$rowrep9['date']."</td>";
+        echo"<td>".number_format($rowrep9['loanAmount'])."</td>";
         
-        echo"<td>".number_format($rowrep6['principlePayment'])."</td>";
-        echo"<td>".number_format($rowrep6['intrest'])."</td>";
-        echo"<td>".number_format($rowrep6['fine'])."</td>";
-        echo"<td>".number_format($rowrep6['totalPay'])."</td>";
-        echo"<td>".number_format($rowrep6['balance'])."</td>";
-        echo"<td>".$rowrep6['receivedBy']."</td>";
-        echo"<td>".$rowrep6['paidBy']."</td>";
-        echo"<td>".$rowrep6['AccountNo']."</td>";
-        echo"<td>".$rowrep6['loanId']."</td>";
+        echo"<td>".number_format($rowrep9['principlePayment'])."</td>";
+        echo"<td>".number_format($rowrep9['intrest'])."</td>";
+        echo"<td>".number_format($rowrep9['fine'])."</td>";
+        echo"<td>".number_format($rowrep9['totalPay'])."</td>";
+        echo"<td>".number_format($rowrep9['balance'])."</td>";
+        echo"<td>".$rowrep9['receivedBy']."</td>";
+        echo"<td>".$rowrep9['paidBy']."</td>";
+        echo"<td>".$rowrep9['AccountNo']."</td>";
+        echo"<td>".$rowrep9['loanId']."</td>";
         echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for September ".$yr."</p></br>";  
 			  }			
 			 
 		
@@ -3581,9 +3580,9 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 		echo"<p style='color:green;font-size:17pt'>SAVINGS</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Deposit</p></br>";
 			  //getting monthly deposits
-			 $a6= mysqli_query($con,"select * from deposit where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numa6=mysqli_num_rows($a6);
-			  if($numa6>0){
+			 $a10= mysqli_query($con,"select * from deposit where MONTH(date)='10' and YEAR(date)='$yr'");
+		      $numa10=mysqli_num_rows($a10);
+			  if($numa10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Deposit id.</td>";
@@ -3595,20 +3594,20 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
              echo"<td>Account Balance</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowd6 = mysqli_fetch_array($a6)){
+				while($rowd10 = mysqli_fetch_array($a10)){
 		echo"<tr>";
-        echo"<td>".$rowd6['depositId']."</td>";
-        echo"<td>".$rowd['Name']."</td>";
-        $m6= number_format($rowd6['depositAmount']);
-        echo"<td>".$m6."</td>";
-         echo"<td>".$rowd6['date']."</td>";
-        echo"<td>".$rowd6['paidBy']."</td>";
+        echo"<td>".$rowd10['depositId']."</td>";
+        echo"<td>".$rowd10['Name']."</td>";
+        $m10= number_format($rowd10['depositAmount']);
+        echo"<td>".$m10."</td>";
+         echo"<td>".$rowd10['date']."</td>";
+        echo"<td>".$rowd10['paidBy']."</td>";
         
-       echo"<td>".$rowd6['tellerName']."</td>";
+       echo"<td>".$rowd10['tellerName']."</td>";
         
-        $n6= number_format($rowd6['balance']);
-        echo"<td>".$n6."</td>";
-        echo"<td>".$rowd6['AccountNo']."</td>";
+        $n10= number_format($rowd10['balance']);
+        echo"<td>".$n10."</td>";
+        echo"<td>".$rowd10['AccountNo']."</td>";
         
        
        
@@ -3617,15 +3616,15 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Deposit record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Deposit record for October ".$yr."</p></br>";  
 			  }
 			  
 			 
 			 //getting monthly withdraws
 			  echo"<p style='color:blue;font-size:16pt'>Withdrawals</p></br>";
-			   $b6= mysqli_query($con,"select * from withdraw where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numb6=mysqli_num_rows($b6);
-			  if($numb6>0){
+			   $b10= mysqli_query($con,"select * from withdraw where MONTH(date)='10' and YEAR(date)='$yr'");
+		      $numb10=mysqli_num_rows($b10);
+			  if($numb10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>withdrawId</td>";
@@ -3637,19 +3636,19 @@ echo"</table></br>";
              echo"<td>mgtFees</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowth6 = mysqli_fetch_array($b6)){
+				while($rowth10 = mysqli_fetch_array($b10)){
 		echo"<tr>";
-        echo"<td>".$rowth6['withdrawId']."</td>";
-        echo"<td>".$rowth6['Name']."</td>";
-        $mth6= number_format($rowth6['withdrawAmount']);
-        echo"<td>".$mth6."</td>";
-         echo"<td>".$rowth6['date']."</td>";
-        echo"<td>".$rowth6['tellerName']."</td>";
-        $nth6= number_format($rowth6['balance']);
-        echo"<td>".$nth6."</td>";
-		$mgth6= number_format($rowth6['mgtFees']);
-        echo"<td>".$mgth6."</td>";
-        echo"<td>".$rowth6['AccountNo']."</td>";
+        echo"<td>".$rowth10['withdrawId']."</td>";
+        echo"<td>".$rowth10['Name']."</td>";
+        $mth10= number_format($rowth10['withdrawAmount']);
+        echo"<td>".$mth10."</td>";
+         echo"<td>".$rowth10['date']."</td>";
+        echo"<td>".$rowth10['tellerName']."</td>";
+        $nth10= number_format($rowth10['balance']);
+        echo"<td>".$nth10."</td>";
+		$mgth10= number_format($rowth10['mgtFees']);
+        echo"<td>".$mgth10."</td>";
+        echo"<td>".$rowth10['AccountNo']."</td>";
         
        
        
@@ -3658,16 +3657,16 @@ echo"</table></br>";
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Withdraw record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Withdraw record for October ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly expenses
 			  echo"<p style='color:green;font-size:17pt'>INCOME STATEMENT</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Expenses</p></br>";
-			  $c6= mysqli_query($con,"select * from expenses where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numc6=mysqli_num_rows($c6);
-			  if($numc6>0){
+			  $c10= mysqli_query($con,"select * from expenses where MONTH(date)='10' and YEAR(date)='$yr'");
+		      $numc10=mysqli_num_rows($c10);
+			  if($numc10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>VoucherNo</td>";
@@ -3676,29 +3675,29 @@ echo"</table></br>";
     echo"<td>Date </td>";
              echo"<td>personResponsible</td>";
              echo"</tr>";
-				while($rowxp6 = mysqli_fetch_array($c6)){
+				while($rowxp10 = mysqli_fetch_array($c10)){
 		echo"<tr>";
-        echo"<td>".$rowxp6['VoucherNo']."</td>";
-        echo"<td>".$rowxp6['expenseType']."</td>";
-        $mxp6= number_format($rowxp6['expenseAmount']);
-        echo"<td>".$mxp6."</td>";
-         echo"<td>".$rowxp6['date']."</td>";
-        echo"<td>".$rowxp6['personResponsible']."</td>";
+        echo"<td>".$rowxp10['VoucherNo']."</td>";
+        echo"<td>".$rowxp10['expenseType']."</td>";
+        $mxp10= number_format($rowxp10['expenseAmount']);
+        echo"<td>".$mxp10."</td>";
+         echo"<td>".$rowxp10['date']."</td>";
+        echo"<td>".$rowxp10['personResponsible']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no expense record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no expense record for October ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  
 			  //getting monthly income
 			  echo"<p style='color:blue;font-size:16pt'>Income</p></br>";
-			  $d6= mysqli_query($con,"select * from income where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numd6=mysqli_num_rows($d6);
-			  if($numd6>0){
+			  $d10= mysqli_query($con,"select * from income where MONTH(date)='10' and YEAR(date)='$yr'");
+		      $numd10=mysqli_num_rows($d10);
+			  if($numd10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>incomeId</td>";
@@ -3708,29 +3707,29 @@ echo"</table></br>";
     echo"<td>incomeAmount</td>";
     echo"<td>Date</td>";
     echo"</tr>";
-	while($rowinc6 = mysqli_fetch_array($d6)){
+	while($rowinc10 = mysqli_fetch_array($d10)){
 		echo"<tr>";
-        echo"<td>".$rowinc6['incomeId']."</td>";
-        echo"<td>".$rowinc6['receiptNo']."</td>";
-        $minc6= number_format($rowinc6['incomeAmount']);
-        echo"<td>".$rowinc6['typeOfIncome']."</td>";
-        echo"<td>".$rowinc6['receivedFrom']."</td>";
-		echo"<td>".$minc6."</td>";
-		echo"<td>".$rowinc6['date']."</td>";
+        echo"<td>".$rowinc10['incomeId']."</td>";
+        echo"<td>".$rowinc10['receiptNo']."</td>";
+        $minc10= number_format($rowinc10['incomeAmount']);
+        echo"<td>".$rowinc10['typeOfIncome']."</td>";
+        echo"<td>".$rowinc10['receivedFrom']."</td>";
+		echo"<td>".$minc10."</td>";
+		echo"<td>".$rowinc10['date']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Income record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Income record for October ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly shares
 			  echo"<p style='color:green;font-size:17pt'>Shares</p></br>";
-			  $e6= mysqli_query($con,"select * from share where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $nume6=mysqli_num_rows($e6);
-			  if($nume6>0){
+			  $e10= mysqli_query($con,"select * from share where MONTH(date)='10' and YEAR(date)='$yr'");
+		      $nume10=mysqli_num_rows($e10);
+			  if($nume10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>shareID</td>";
@@ -3742,31 +3741,31 @@ echo"</table></br>";
 	echo"<td>date</td>";
     echo"<td>teller</td>";
     echo"</tr>";
-	while($rowsh6 = mysqli_fetch_array($e6)){
+	while($rowsh10 = mysqli_fetch_array($e10)){
 		echo"<tr>";
-        echo"<td>".$rowsh6['shareID']."</td>";
-        echo"<td>".number_format($rowsh6['amountPaid'])."</td>";
-        $msh6= number_format($rowsh6['totalAmount']);
-        echo"<td>".$msh6."</td>";
-        echo"<td>".number_format($rowsh6['numberOfShares'])."</td>";
-		echo"<td>".number_format($rowsh6['totalnumberOfShares'])."</td>";
-		echo"<td>".$rowsh6['AccountNo']."</td>";
-		echo"<td>".$rowsh6['date']."</td>";
-		echo"<td>".$rowsh6['teller']."</td>";
+        echo"<td>".$rowsh10['shareID']."</td>";
+        echo"<td>".number_format($rowsh10['amountPaid'])."</td>";
+        $msh10= number_format($rowsh10['totalAmount']);
+        echo"<td>".$msh10."</td>";
+        echo"<td>".number_format($rowsh10['numberOfShares'])."</td>";
+		echo"<td>".number_format($rowsh10['totalnumberOfShares'])."</td>";
+		echo"<td>".$rowsh10['AccountNo']."</td>";
+		echo"<td>".$rowsh10['date']."</td>";
+		echo"<td>".$rowsh10['teller']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-		echo"<p style='color:red;font-size:15pt'>no Share record for June ".$yr."</p></br>";  
+		echo"<p style='color:red;font-size:15pt'>no Share record for October ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting customers registered in a specific month
 			  echo"<p style='color:green;font-size:17pt'>Members Registered</p></br>";
-			   $f6= mysqli_query($con,"select * from customer where MONTH(custSince)='06' and YEAR(custSince)='$yr'");
-            $numf6=mysqli_num_rows($f6);
-     		  if($numf6>0){
+			   $f10= mysqli_query($con,"select * from customer where MONTH(custSince)='10' and YEAR(custSince)='$yr'");
+            $numf10=mysqli_num_rows($f10);
+     		  if($numf10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Account NO.</td>";
@@ -3788,42 +3787,42 @@ echo"</table></br>";
              echo"<td>Date of joining</td>";
              echo"<td>Account Balance</td>";
     echo"</tr>";
-	while($rowcust6 = mysqli_fetch_array($f6)){
+	while($rowcust10 = mysqli_fetch_array($f10)){
 		echo"<tr>";
-        echo"<td>".$rowcust6['AccountNo']."</td>";
-        echo"<td>".$rowcust6['Name']."</td>";
-        echo"<td>".$rowcust6['custDob']."</td>";
+        echo"<td>".$rowcust10['AccountNo']."</td>";
+        echo"<td>".$rowcust10['Name']."</td>";
+        echo"<td>".$rowcust10['custDob']."</td>";
         
-        echo"<td>".$rowcust6['custsexId']."</td>";
-        echo"<td>".$rowcust6['custAddress']."</td>";
-        echo"<td>".$rowcust6['custPhone']."</td>";
-        echo"<td>".$rowcust6['custEmail']."</td>";
-        echo"<td>".$rowcust6['custOccup']."</td>";
-        echo"<td>".$rowcust6['custmarriedId']."</td>";
-        echo"<td>".$rowcust6['custHeir']."</td>";
-        echo"<td>".$rowcust6['custHeirrel']."</td>";
-        echo"<td>".$rowcust6['placeOfBirth']."</td>";
-        echo"<td>".$rowcust6['village']."</td>";
-        echo"<td>".$rowcust6['parish']."</td>";
-        echo"<td>".$rowcust6['subcounty']."</td>";
-        echo"<td>".$rowcust6['district']."</td>";
-        echo"<td>".$rowcust6['custSince']."</td>";
-        $blcust6=number_format($rowcust6['acountBalance']);
-        echo"<td>".$blcust6."</td>";
+        echo"<td>".$rowcust10['custsexId']."</td>";
+        echo"<td>".$rowcust10['custAddress']."</td>";
+        echo"<td>".$rowcust10['custPhone']."</td>";
+        echo"<td>".$rowcust10['custEmail']."</td>";
+        echo"<td>".$rowcust10['custOccup']."</td>";
+        echo"<td>".$rowcust10['custmarriedId']."</td>";
+        echo"<td>".$rowcust10['custHeir']."</td>";
+        echo"<td>".$rowcust10['custHeirrel']."</td>";
+        echo"<td>".$rowcust10['placeOfBirth']."</td>";
+        echo"<td>".$rowcust10['village']."</td>";
+        echo"<td>".$rowcust10['parish']."</td>";
+        echo"<td>".$rowcust10['subcounty']."</td>";
+        echo"<td>".$rowcust10['district']."</td>";
+        echo"<td>".$rowcust10['custSince']."</td>";
+        $blcust10=number_format($rowcust10['acountBalance']);
+        echo"<td>".$blcust10."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Member was registered in October ".$yr."</p></br>";  
 			  }			
 			 
 			 
 			   //getting monthly loans
 			   echo"<p style='color:green;font-size:17pt'>Loans given out</p></br>";
-			  $g6= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='06' and YEAR(dateOfApproval )='$yr'");
-		      $numg6=mysqli_num_rows($g6);
-     		  if($numg6>0){
+			  $g10= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='10' and YEAR(dateOfApproval )='$yr'");
+		      $numg10=mysqli_num_rows($g10);
+     		  if($numg10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Loan id.</td>";
@@ -3840,40 +3839,40 @@ echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr.
 			echo"<td>Fine</td>";
             echo"<td>AccountNo</td>";
     echo"</tr>";
-	while($rowln6 = mysqli_fetch_array($g6)){
+	while($rowln10 = mysqli_fetch_array($g10)){
 		echo"<tr>";
-       echo"<td>".$rowln6['loanId']."</td>";
-        echo"<td>".$rowln6['Name']."</td>";
-        $m6= number_format($rowln6['approvedAmount']);
-        echo"<td>".$m6."</td>";
-        $pn6=number_format($rowln6['actualAmount']);
-         echo"<td>".$pn6."</td>";
-        echo"<td>".$rowln6['dateOfApproval']."</td>";
-		echo"<td>".$rowln6['DueDate']."</td>";
-        echo"<td>".$rowln6['status']."</td>";
-         echo"<td>".$rowln6['loansOfficer']."</td>";
-		 $mpt6= number_format($rowln6['monthlyInstalment']);
-        echo"<td>".$mpt6."</td>";
-        $blc6= number_format($rowln6['balance']);
-        echo"<td>".$blc6."</td>";
-        echo"<td>".$rowln6['period']."</td>";
-		$fn6= number_format($rowln6['fine']);
-		echo"<td>".$fn6."</td>";
-        echo"<td>".$rowln6['AccountNo']."</td>";
+       echo"<td>".$rowln10['loanId']."</td>";
+        echo"<td>".$rowln10['Name']."</td>";
+        $m10= number_format($rowln10['approvedAmount']);
+        echo"<td>".$m10."</td>";
+        $pn10=number_format($rowln10['actualAmount']);
+         echo"<td>".$pn10."</td>";
+        echo"<td>".$rowln10['dateOfApproval']."</td>";
+		echo"<td>".$rowln10['DueDate']."</td>";
+        echo"<td>".$rowln10['status']."</td>";
+         echo"<td>".$rowln10['loansOfficer']."</td>";
+		 $mpt10= number_format($rowln10['monthlyInstalment']);
+        echo"<td>".$mpt10."</td>";
+        $blc10= number_format($rowln10['balance']);
+        echo"<td>".$blc10."</td>";
+        echo"<td>".$rowln10['period']."</td>";
+		$fn10= number_format($rowln10['fine']);
+		echo"<td>".$fn10."</td>";
+        echo"<td>".$rowln10['AccountNo']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no loan was given out in June".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no loan was given out in October ".$yr."</p></br>";  
 			  }
 
 			 
 			  //getting monthly loanRepayment
 			  echo"<p style='color:green;font-size:17pt'>Loan Repayment</p></br>";
-			  $h6= mysqli_query($con,"select * from loanrepayment where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numh6=mysqli_num_rows($h6);
-     		  if($numh6>0){
+			  $h10= mysqli_query($con,"select * from loanrepayment where MONTH(date)='10' and YEAR(date)='$yr'");
+		      $numh10=mysqli_num_rows($h10);
+     		  if($numh10>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>repaymentId</td>";
@@ -3889,27 +3888,27 @@ echo"</table></br>";
              echo"<td>AccountNo</td>";
             echo"<td>loanId</td>";
             echo"</tr>";
-	while($rowrep6 = mysqli_fetch_array($h6)){
+	while($rowrep10 = mysqli_fetch_array($h10)){
 		echo"<tr>";
-        echo"<td>".$rowrep6['repaymentId']."</td>";
-        echo"<td>".$rowrep6['date']."</td>";
-        echo"<td>".number_format($rowrep6['loanAmount'])."</td>";
+        echo"<td>".$rowrep10['repaymentId']."</td>";
+        echo"<td>".$rowrep10['date']."</td>";
+        echo"<td>".number_format($rowrep10['loanAmount'])."</td>";
         
-        echo"<td>".number_format($rowrep6['principlePayment'])."</td>";
-        echo"<td>".number_format($rowrep6['intrest'])."</td>";
-        echo"<td>".number_format($rowrep6['fine'])."</td>";
-        echo"<td>".number_format($rowrep6['totalPay'])."</td>";
-        echo"<td>".number_format($rowrep6['balance'])."</td>";
-        echo"<td>".$rowrep6['receivedBy']."</td>";
-        echo"<td>".$rowrep6['paidBy']."</td>";
-        echo"<td>".$rowrep6['AccountNo']."</td>";
-        echo"<td>".$rowrep6['loanId']."</td>";
+        echo"<td>".number_format($rowrep10['principlePayment'])."</td>";
+        echo"<td>".number_format($rowrep10['intrest'])."</td>";
+        echo"<td>".number_format($rowrep10['fine'])."</td>";
+        echo"<td>".number_format($rowrep10['totalPay'])."</td>";
+        echo"<td>".number_format($rowrep10['balance'])."</td>";
+        echo"<td>".$rowrep10['receivedBy']."</td>";
+        echo"<td>".$rowrep10['paidBy']."</td>";
+        echo"<td>".$rowrep10['AccountNo']."</td>";
+        echo"<td>".$rowrep10['loanId']."</td>";
         echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for October ".$yr."</p></br>";  
 			  }			
 			 
 		echo"<p style='font-size:25pt'>November</p></br>";
@@ -3919,9 +3918,9 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 		echo"<p style='color:green;font-size:17pt'>SAVINGS</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Deposit</p></br>";
 			  //getting monthly deposits
-			 $a6= mysqli_query($con,"select * from deposit where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numa6=mysqli_num_rows($a6);
-			  if($numa6>0){
+			 $a11= mysqli_query($con,"select * from deposit where MONTH(date)='11' and YEAR(date)='$yr'");
+		      $numa11=mysqli_num_rows($a11);
+			  if($numa11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Deposit id.</td>";
@@ -3933,20 +3932,20 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
              echo"<td>Account Balance</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowd6 = mysqli_fetch_array($a6)){
+				while($rowd11 = mysqli_fetch_array($a11)){
 		echo"<tr>";
-        echo"<td>".$rowd6['depositId']."</td>";
-        echo"<td>".$rowd['Name']."</td>";
-        $m6= number_format($rowd6['depositAmount']);
-        echo"<td>".$m6."</td>";
-         echo"<td>".$rowd6['date']."</td>";
-        echo"<td>".$rowd6['paidBy']."</td>";
+        echo"<td>".$rowd11['depositId']."</td>";
+        echo"<td>".$rowd11['Name']."</td>";
+        $m11= number_format($rowd11['depositAmount']);
+        echo"<td>".$m11."</td>";
+         echo"<td>".$rowd11['date']."</td>";
+        echo"<td>".$rowd11['paidBy']."</td>";
         
-       echo"<td>".$rowd6['tellerName']."</td>";
+       echo"<td>".$rowd11['tellerName']."</td>";
         
-        $n6= number_format($rowd6['balance']);
-        echo"<td>".$n6."</td>";
-        echo"<td>".$rowd6['AccountNo']."</td>";
+        $n11= number_format($rowd11['balance']);
+        echo"<td>".$n11."</td>";
+        echo"<td>".$rowd11['AccountNo']."</td>";
         
        
        
@@ -3955,15 +3954,15 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Deposit record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Deposit record for November ".$yr."</p></br>";  
 			  }
 			  
 			 
 			 //getting monthly withdraws
 			  echo"<p style='color:blue;font-size:16pt'>Withdrawals</p></br>";
-			   $b6= mysqli_query($con,"select * from withdraw where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numb6=mysqli_num_rows($b6);
-			  if($numb6>0){
+			   $b11= mysqli_query($con,"select * from withdraw where MONTH(date)='11' and YEAR(date)='$yr'");
+		      $numb11=mysqli_num_rows($b11);
+			  if($numb11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>withdrawId</td>";
@@ -3975,19 +3974,19 @@ echo"</table></br>";
              echo"<td>mgtFees</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowth6 = mysqli_fetch_array($b6)){
+				while($rowth11 = mysqli_fetch_array($b11)){
 		echo"<tr>";
-        echo"<td>".$rowth6['withdrawId']."</td>";
-        echo"<td>".$rowth6['Name']."</td>";
-        $mth6= number_format($rowth6['withdrawAmount']);
-        echo"<td>".$mth6."</td>";
-         echo"<td>".$rowth6['date']."</td>";
-        echo"<td>".$rowth6['tellerName']."</td>";
-        $nth6= number_format($rowth6['balance']);
-        echo"<td>".$nth6."</td>";
-		$mgth6= number_format($rowth6['mgtFees']);
-        echo"<td>".$mgth6."</td>";
-        echo"<td>".$rowth6['AccountNo']."</td>";
+        echo"<td>".$rowth11['withdrawId']."</td>";
+        echo"<td>".$rowth11['Name']."</td>";
+        $mth11= number_format($rowth11['withdrawAmount']);
+        echo"<td>".$mth11."</td>";
+         echo"<td>".$rowth11['date']."</td>";
+        echo"<td>".$rowth11['tellerName']."</td>";
+        $nth11= number_format($rowth11['balance']);
+        echo"<td>".$nth11."</td>";
+		$mgth11= number_format($rowth11['mgtFees']);
+        echo"<td>".$mgth11."</td>";
+        echo"<td>".$rowth11['AccountNo']."</td>";
         
        
        
@@ -3996,16 +3995,16 @@ echo"</table></br>";
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Withdraw record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Withdraw record for November ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly expenses
 			  echo"<p style='color:green;font-size:17pt'>INCOME STATEMENT</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Expenses</p></br>";
-			  $c6= mysqli_query($con,"select * from expenses where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numc6=mysqli_num_rows($c6);
-			  if($numc6>0){
+			  $c11= mysqli_query($con,"select * from expenses where MONTH(date)='11' and YEAR(date)='$yr'");
+		      $numc11=mysqli_num_rows($c11);
+			  if($numc11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>VoucherNo</td>";
@@ -4014,29 +4013,29 @@ echo"</table></br>";
     echo"<td>Date </td>";
              echo"<td>personResponsible</td>";
              echo"</tr>";
-				while($rowxp6 = mysqli_fetch_array($c6)){
+				while($rowxp11 = mysqli_fetch_array($c11)){
 		echo"<tr>";
-        echo"<td>".$rowxp6['VoucherNo']."</td>";
-        echo"<td>".$rowxp6['expenseType']."</td>";
-        $mxp6= number_format($rowxp6['expenseAmount']);
-        echo"<td>".$mxp6."</td>";
-         echo"<td>".$rowxp6['date']."</td>";
-        echo"<td>".$rowxp6['personResponsible']."</td>";
+        echo"<td>".$rowxp11['VoucherNo']."</td>";
+        echo"<td>".$rowxp11['expenseType']."</td>";
+        $mxp11= number_format($rowxp11['expenseAmount']);
+        echo"<td>".$mxp11."</td>";
+         echo"<td>".$rowxp11['date']."</td>";
+        echo"<td>".$rowxp11['personResponsible']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no expense record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no expense record for November ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  
 			  //getting monthly income
 			  echo"<p style='color:blue;font-size:16pt'>Income</p></br>";
-			  $d6= mysqli_query($con,"select * from income where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numd6=mysqli_num_rows($d6);
-			  if($numd6>0){
+			  $d11= mysqli_query($con,"select * from income where MONTH(date)='11' and YEAR(date)='$yr'");
+		      $numd6=mysqli_num_rows($d11);
+			  if($numd11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>incomeId</td>";
@@ -4046,29 +4045,29 @@ echo"</table></br>";
     echo"<td>incomeAmount</td>";
     echo"<td>Date</td>";
     echo"</tr>";
-	while($rowinc6 = mysqli_fetch_array($d6)){
+	while($rowinc11 = mysqli_fetch_array($d11)){
 		echo"<tr>";
-        echo"<td>".$rowinc6['incomeId']."</td>";
-        echo"<td>".$rowinc6['receiptNo']."</td>";
-        $minc6= number_format($rowinc6['incomeAmount']);
-        echo"<td>".$rowinc6['typeOfIncome']."</td>";
-        echo"<td>".$rowinc6['receivedFrom']."</td>";
-		echo"<td>".$minc6."</td>";
-		echo"<td>".$rowinc6['date']."</td>";
+        echo"<td>".$rowinc11['incomeId']."</td>";
+        echo"<td>".$rowinc11['receiptNo']."</td>";
+        $minc11= number_format($rowinc11['incomeAmount']);
+        echo"<td>".$rowinc11['typeOfIncome']."</td>";
+        echo"<td>".$rowinc11['receivedFrom']."</td>";
+		echo"<td>".$minc11."</td>";
+		echo"<td>".$rowinc11['date']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Income record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Income record for November ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly shares
 			  echo"<p style='color:green;font-size:17pt'>Shares</p></br>";
-			  $e6= mysqli_query($con,"select * from share where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $nume6=mysqli_num_rows($e6);
-			  if($nume6>0){
+			  $e11= mysqli_query($con,"select * from share where MONTH(date)='11' and YEAR(date)='$yr'");
+		      $nume11=mysqli_num_rows($e11);
+			  if($nume11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>shareID</td>";
@@ -4080,31 +4079,31 @@ echo"</table></br>";
 	echo"<td>date</td>";
     echo"<td>teller</td>";
     echo"</tr>";
-	while($rowsh6 = mysqli_fetch_array($e6)){
+	while($rowsh11 = mysqli_fetch_array($e11)){
 		echo"<tr>";
-        echo"<td>".$rowsh6['shareID']."</td>";
-        echo"<td>".number_format($rowsh6['amountPaid'])."</td>";
-        $msh6= number_format($rowsh6['totalAmount']);
-        echo"<td>".$msh6."</td>";
-        echo"<td>".number_format($rowsh6['numberOfShares'])."</td>";
-		echo"<td>".number_format($rowsh6['totalnumberOfShares'])."</td>";
-		echo"<td>".$rowsh6['AccountNo']."</td>";
-		echo"<td>".$rowsh6['date']."</td>";
-		echo"<td>".$rowsh6['teller']."</td>";
+        echo"<td>".$rowsh11['shareID']."</td>";
+        echo"<td>".number_format($rowsh11['amountPaid'])."</td>";
+        $msh11= number_format($rowsh11['totalAmount']);
+        echo"<td>".$msh11."</td>";
+        echo"<td>".number_format($rowsh11['numberOfShares'])."</td>";
+		echo"<td>".number_format($rowsh11['totalnumberOfShares'])."</td>";
+		echo"<td>".$rowsh11['AccountNo']."</td>";
+		echo"<td>".$rowsh11['date']."</td>";
+		echo"<td>".$rowsh11['teller']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-		echo"<p style='color:red;font-size:15pt'>no Share record for June ".$yr."</p></br>";  
+		echo"<p style='color:red;font-size:15pt'>no Share record for November ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting customers registered in a specific month
 			  echo"<p style='color:green;font-size:17pt'>Members Registered</p></br>";
-			   $f6= mysqli_query($con,"select * from customer where MONTH(custSince)='06' and YEAR(custSince)='$yr'");
-            $numf6=mysqli_num_rows($f6);
-     		  if($numf6>0){
+			   $f11= mysqli_query($con,"select * from customer where MONTH(custSince)='11' and YEAR(custSince)='$yr'");
+            $numf11=mysqli_num_rows($f11);
+     		  if($numf11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Account NO.</td>";
@@ -4126,42 +4125,42 @@ echo"</table></br>";
              echo"<td>Date of joining</td>";
              echo"<td>Account Balance</td>";
     echo"</tr>";
-	while($rowcust6 = mysqli_fetch_array($f6)){
+	while($rowcust11 = mysqli_fetch_array($f11)){
 		echo"<tr>";
-        echo"<td>".$rowcust6['AccountNo']."</td>";
-        echo"<td>".$rowcust6['Name']."</td>";
-        echo"<td>".$rowcust6['custDob']."</td>";
+        echo"<td>".$rowcust11['AccountNo']."</td>";
+        echo"<td>".$rowcust11['Name']."</td>";
+        echo"<td>".$rowcust11['custDob']."</td>";
         
-        echo"<td>".$rowcust6['custsexId']."</td>";
-        echo"<td>".$rowcust6['custAddress']."</td>";
-        echo"<td>".$rowcust6['custPhone']."</td>";
-        echo"<td>".$rowcust6['custEmail']."</td>";
-        echo"<td>".$rowcust6['custOccup']."</td>";
-        echo"<td>".$rowcust6['custmarriedId']."</td>";
-        echo"<td>".$rowcust6['custHeir']."</td>";
-        echo"<td>".$rowcust6['custHeirrel']."</td>";
-        echo"<td>".$rowcust6['placeOfBirth']."</td>";
-        echo"<td>".$rowcust6['village']."</td>";
-        echo"<td>".$rowcust6['parish']."</td>";
-        echo"<td>".$rowcust6['subcounty']."</td>";
-        echo"<td>".$rowcust6['district']."</td>";
-        echo"<td>".$rowcust6['custSince']."</td>";
-        $blcust6=number_format($rowcust6['acountBalance']);
-        echo"<td>".$blcust6."</td>";
+        echo"<td>".$rowcust11['custsexId']."</td>";
+        echo"<td>".$rowcust11['custAddress']."</td>";
+        echo"<td>".$rowcust11['custPhone']."</td>";
+        echo"<td>".$rowcust11['custEmail']."</td>";
+        echo"<td>".$rowcust11['custOccup']."</td>";
+        echo"<td>".$rowcust11['custmarriedId']."</td>";
+        echo"<td>".$rowcust11['custHeir']."</td>";
+        echo"<td>".$rowcust11['custHeirrel']."</td>";
+        echo"<td>".$rowcust11['placeOfBirth']."</td>";
+        echo"<td>".$rowcust11['village']."</td>";
+        echo"<td>".$rowcust11['parish']."</td>";
+        echo"<td>".$rowcust11['subcounty']."</td>";
+        echo"<td>".$rowcust11['district']."</td>";
+        echo"<td>".$rowcust11['custSince']."</td>";
+        $blcust11=number_format($rowcust11['acountBalance']);
+        echo"<td>".$blcust11."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Member was registered in November ".$yr."</p></br>";  
 			  }			
 			 
 			 
 			   //getting monthly loans
 			   echo"<p style='color:green;font-size:17pt'>Loans given out</p></br>";
-			  $g6= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='06' and YEAR(dateOfApproval )='$yr'");
-		      $numg6=mysqli_num_rows($g6);
-     		  if($numg6>0){
+			 $g11= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='11' and YEAR(dateOfApproval )='$yr'");
+		      $numg11=mysqli_num_rows($g11);
+     		  if($numg11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Loan id.</td>";
@@ -4178,40 +4177,40 @@ echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr.
 			echo"<td>Fine</td>";
             echo"<td>AccountNo</td>";
     echo"</tr>";
-	while($rowln6 = mysqli_fetch_array($g6)){
+	while($rowln11 = mysqli_fetch_array($g11)){
 		echo"<tr>";
-       echo"<td>".$rowln6['loanId']."</td>";
-        echo"<td>".$rowln6['Name']."</td>";
-        $m6= number_format($rowln6['approvedAmount']);
-        echo"<td>".$m6."</td>";
-        $pn6=number_format($rowln6['actualAmount']);
-         echo"<td>".$pn6."</td>";
-        echo"<td>".$rowln6['dateOfApproval']."</td>";
-		echo"<td>".$rowln6['DueDate']."</td>";
-        echo"<td>".$rowln6['status']."</td>";
-         echo"<td>".$rowln6['loansOfficer']."</td>";
-		 $mpt6= number_format($rowln6['monthlyInstalment']);
-        echo"<td>".$mpt6."</td>";
-        $blc6= number_format($rowln6['balance']);
-        echo"<td>".$blc6."</td>";
-        echo"<td>".$rowln6['period']."</td>";
-		$fn6= number_format($rowln6['fine']);
-		echo"<td>".$fn6."</td>";
-        echo"<td>".$rowln6['AccountNo']."</td>";
+       echo"<td>".$rowln11['loanId']."</td>";
+        echo"<td>".$rowln11['Name']."</td>";
+        $m11= number_format($rowln11['approvedAmount']);
+        echo"<td>".$m11."</td>";
+        $pn11=number_format($rowln11['actualAmount']);
+         echo"<td>".$pn11."</td>";
+        echo"<td>".$rowln11['dateOfApproval']."</td>";
+		echo"<td>".$rowln11['DueDate']."</td>";
+        echo"<td>".$rowln11['status']."</td>";
+         echo"<td>".$rowln11['loansOfficer']."</td>";
+		 $mpt11= number_format($rowln11['monthlyInstalment']);
+        echo"<td>".$mpt11."</td>";
+        $blc11= number_format($rowln11['balance']);
+        echo"<td>".$blc11."</td>";
+        echo"<td>".$rowln11['period']."</td>";
+		$fn11= number_format($rowln11['fine']);
+		echo"<td>".$fn11."</td>";
+        echo"<td>".$rowln11['AccountNo']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no loan was given out in June".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no loan was given out in November ".$yr."</p></br>";  
 			  }
 
 			 
 			  //getting monthly loanRepayment
 			  echo"<p style='color:green;font-size:17pt'>Loan Repayment</p></br>";
-			  $h6= mysqli_query($con,"select * from loanrepayment where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numh6=mysqli_num_rows($h6);
-     		  if($numh6>0){
+			  $h11= mysqli_query($con,"select * from loanrepayment where MONTH(date)='11' and YEAR(date)='$yr'");
+		      $numh11=mysqli_num_rows($h11);
+     		  if($numh11>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>repaymentId</td>";
@@ -4227,27 +4226,27 @@ echo"</table></br>";
              echo"<td>AccountNo</td>";
             echo"<td>loanId</td>";
             echo"</tr>";
-	while($rowrep6 = mysqli_fetch_array($h6)){
+	while($rowrep11 = mysqli_fetch_array($h11)){
 		echo"<tr>";
-        echo"<td>".$rowrep6['repaymentId']."</td>";
-        echo"<td>".$rowrep6['date']."</td>";
-        echo"<td>".number_format($rowrep6['loanAmount'])."</td>";
+        echo"<td>".$rowrep11['repaymentId']."</td>";
+        echo"<td>".$rowrep11['date']."</td>";
+        echo"<td>".number_format($rowrep11['loanAmount'])."</td>";
         
-        echo"<td>".number_format($rowrep6['principlePayment'])."</td>";
-        echo"<td>".number_format($rowrep6['intrest'])."</td>";
-        echo"<td>".number_format($rowrep6['fine'])."</td>";
-        echo"<td>".number_format($rowrep6['totalPay'])."</td>";
-        echo"<td>".number_format($rowrep6['balance'])."</td>";
-        echo"<td>".$rowrep6['receivedBy']."</td>";
-        echo"<td>".$rowrep6['paidBy']."</td>";
-        echo"<td>".$rowrep6['AccountNo']."</td>";
-        echo"<td>".$rowrep6['loanId']."</td>";
+        echo"<td>".number_format($rowrep11['principlePayment'])."</td>";
+        echo"<td>".number_format($rowrep11['intrest'])."</td>";
+        echo"<td>".number_format($rowrep11['fine'])."</td>";
+        echo"<td>".number_format($rowrep11['totalPay'])."</td>";
+        echo"<td>".number_format($rowrep11['balance'])."</td>";
+        echo"<td>".$rowrep11['receivedBy']."</td>";
+        echo"<td>".$rowrep11['paidBy']."</td>";
+        echo"<td>".$rowrep11['AccountNo']."</td>";
+        echo"<td>".$rowrep11['loanId']."</td>";
         echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for November ".$yr."</p></br>";  
 			  }			
 			 
 		echo"<p style='font-size:25pt'>December</p></br>";
@@ -4256,9 +4255,9 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 		echo"<p style='color:green;font-size:17pt'>SAVINGS</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Deposit</p></br>";
 			  //getting monthly deposits
-			 $a6= mysqli_query($con,"select * from deposit where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numa6=mysqli_num_rows($a6);
-			  if($numa6>0){
+			 $a12= mysqli_query($con,"select * from deposit where MONTH(date)='12' and YEAR(date)='$yr'");
+		      $numa12=mysqli_num_rows($a12);
+			  if($numa12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Deposit id.</td>";
@@ -4270,20 +4269,20 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
              echo"<td>Account Balance</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowd6 = mysqli_fetch_array($a6)){
+				while($rowd12 = mysqli_fetch_array($a12)){
 		echo"<tr>";
-        echo"<td>".$rowd6['depositId']."</td>";
-        echo"<td>".$rowd['Name']."</td>";
-        $m6= number_format($rowd6['depositAmount']);
-        echo"<td>".$m6."</td>";
-         echo"<td>".$rowd6['date']."</td>";
-        echo"<td>".$rowd6['paidBy']."</td>";
+        echo"<td>".$rowd12['depositId']."</td>";
+        echo"<td>".$rowd12['Name']."</td>";
+        $m12= number_format($rowd12['depositAmount']);
+        echo"<td>".$m12."</td>";
+         echo"<td>".$rowd12['date']."</td>";
+        echo"<td>".$rowd12['paidBy']."</td>";
         
-       echo"<td>".$rowd6['tellerName']."</td>";
+       echo"<td>".$rowd12['tellerName']."</td>";
         
-        $n6= number_format($rowd6['balance']);
-        echo"<td>".$n6."</td>";
-        echo"<td>".$rowd6['AccountNo']."</td>";
+        $n12= number_format($rowd12['balance']);
+        echo"<td>".$n12."</td>";
+        echo"<td>".$rowd12['AccountNo']."</td>";
         
        
        
@@ -4292,15 +4291,15 @@ echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Deposit record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Deposit record for December ".$yr."</p></br>";  
 			  }
 			  
 			 
 			 //getting monthly withdraws
 			  echo"<p style='color:blue;font-size:16pt'>Withdrawals</p></br>";
-			   $b6= mysqli_query($con,"select * from withdraw where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numb6=mysqli_num_rows($b6);
-			  if($numb6>0){
+			   $b12= mysqli_query($con,"select * from withdraw where MONTH(date)='12' and YEAR(date)='$yr'");
+		      $numb12=mysqli_num_rows($b12);
+			  if($numb12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>withdrawId</td>";
@@ -4312,19 +4311,19 @@ echo"</table></br>";
              echo"<td>mgtFees</td>";
             echo"<td>AccountNo.</td>";
               echo"</tr>";
-				while($rowth6 = mysqli_fetch_array($b6)){
+				while($rowth12 = mysqli_fetch_array($b12)){
 		echo"<tr>";
-        echo"<td>".$rowth6['withdrawId']."</td>";
-        echo"<td>".$rowth6['Name']."</td>";
-        $mth6= number_format($rowth6['withdrawAmount']);
-        echo"<td>".$mth6."</td>";
-         echo"<td>".$rowth6['date']."</td>";
-        echo"<td>".$rowth6['tellerName']."</td>";
-        $nth6= number_format($rowth6['balance']);
-        echo"<td>".$nth6."</td>";
-		$mgth6= number_format($rowth6['mgtFees']);
-        echo"<td>".$mgth6."</td>";
-        echo"<td>".$rowth6['AccountNo']."</td>";
+        echo"<td>".$rowth12['withdrawId']."</td>";
+        echo"<td>".$rowth12['Name']."</td>";
+        $mth12= number_format($rowth12['withdrawAmount']);
+        echo"<td>".$mth12."</td>";
+         echo"<td>".$rowth12['date']."</td>";
+        echo"<td>".$rowth12['tellerName']."</td>";
+        $nth6= number_format($rowth12['balance']);
+        echo"<td>".$nth12."</td>";
+		$mgth12= number_format($rowth12['mgtFees']);
+        echo"<td>".$mgth12."</td>";
+        echo"<td>".$rowth12['AccountNo']."</td>";
         
        
        
@@ -4333,16 +4332,16 @@ echo"</table></br>";
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Withdraw record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Withdraw record for December ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly expenses
 			  echo"<p style='color:green;font-size:17pt'>INCOME STATEMENT</p></br>";
 			  echo"<p style='color:blue;font-size:16pt'>Expenses</p></br>";
-			  $c6= mysqli_query($con,"select * from expenses where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numc6=mysqli_num_rows($c6);
-			  if($numc6>0){
+			  $c12= mysqli_query($con,"select * from expenses where MONTH(date)='12' and YEAR(date)='$yr'");
+		      $numc12=mysqli_num_rows($c12);
+			  if($numc12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>VoucherNo</td>";
@@ -4351,29 +4350,29 @@ echo"</table></br>";
     echo"<td>Date </td>";
              echo"<td>personResponsible</td>";
              echo"</tr>";
-				while($rowxp6 = mysqli_fetch_array($c6)){
+				while($rowxp12 = mysqli_fetch_array($c12)){
 		echo"<tr>";
-        echo"<td>".$rowxp6['VoucherNo']."</td>";
-        echo"<td>".$rowxp6['expenseType']."</td>";
-        $mxp6= number_format($rowxp6['expenseAmount']);
-        echo"<td>".$mxp6."</td>";
-         echo"<td>".$rowxp6['date']."</td>";
-        echo"<td>".$rowxp6['personResponsible']."</td>";
+        echo"<td>".$rowxp12['VoucherNo']."</td>";
+        echo"<td>".$rowxp12['expenseType']."</td>";
+        $mxp12= number_format($rowxp12['expenseAmount']);
+        echo"<td>".$mxp12."</td>";
+         echo"<td>".$rowxp12['date']."</td>";
+        echo"<td>".$rowxp12['personResponsible']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no expense record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no expense record for December ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  
 			  //getting monthly income
 			  echo"<p style='color:blue;font-size:16pt'>Income</p></br>";
-			  $d6= mysqli_query($con,"select * from income where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numd6=mysqli_num_rows($d6);
-			  if($numd6>0){
+			  $d12= mysqli_query($con,"select * from income where MONTH(date)='12' and YEAR(date)='$yr'");
+		      $numd12=mysqli_num_rows($d12);
+			  if($numd12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>incomeId</td>";
@@ -4383,29 +4382,29 @@ echo"</table></br>";
     echo"<td>incomeAmount</td>";
     echo"<td>Date</td>";
     echo"</tr>";
-	while($rowinc6 = mysqli_fetch_array($d6)){
+	while($rowinc12 = mysqli_fetch_array($d12)){
 		echo"<tr>";
-        echo"<td>".$rowinc6['incomeId']."</td>";
-        echo"<td>".$rowinc6['receiptNo']."</td>";
-        $minc6= number_format($rowinc6['incomeAmount']);
-        echo"<td>".$rowinc6['typeOfIncome']."</td>";
-        echo"<td>".$rowinc6['receivedFrom']."</td>";
-		echo"<td>".$minc6."</td>";
-		echo"<td>".$rowinc6['date']."</td>";
+        echo"<td>".$rowinc12['incomeId']."</td>";
+        echo"<td>".$rowinc12['receiptNo']."</td>";
+        $minc12= number_format($rowinc12['incomeAmount']);
+        echo"<td>".$rowinc12['typeOfIncome']."</td>";
+        echo"<td>".$rowinc12['receivedFrom']."</td>";
+		echo"<td>".$minc12."</td>";
+		echo"<td>".$rowinc12['date']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no Income record for June ".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no Income record for December ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting monthly shares
 			  echo"<p style='color:green;font-size:17pt'>Shares</p></br>";
-			  $e6= mysqli_query($con,"select * from share where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $nume6=mysqli_num_rows($e6);
-			  if($nume6>0){
+			  $e12= mysqli_query($con,"select * from share where MONTH(date)='12' and YEAR(date)='$yr'");
+		      $nume12=mysqli_num_rows($e12);
+			  if($nume12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>shareID</td>";
@@ -4417,31 +4416,31 @@ echo"</table></br>";
 	echo"<td>date</td>";
     echo"<td>teller</td>";
     echo"</tr>";
-	while($rowsh6 = mysqli_fetch_array($e6)){
+	while($rowsh12 = mysqli_fetch_array($e12)){
 		echo"<tr>";
-        echo"<td>".$rowsh6['shareID']."</td>";
-        echo"<td>".number_format($rowsh6['amountPaid'])."</td>";
-        $msh6= number_format($rowsh6['totalAmount']);
-        echo"<td>".$msh6."</td>";
-        echo"<td>".number_format($rowsh6['numberOfShares'])."</td>";
-		echo"<td>".number_format($rowsh6['totalnumberOfShares'])."</td>";
-		echo"<td>".$rowsh6['AccountNo']."</td>";
-		echo"<td>".$rowsh6['date']."</td>";
-		echo"<td>".$rowsh6['teller']."</td>";
+        echo"<td>".$rowsh12['shareID']."</td>";
+        echo"<td>".number_format($rowsh12['amountPaid'])."</td>";
+        $msh12= number_format($rowsh12['totalAmount']);
+        echo"<td>".$msh12."</td>";
+        echo"<td>".number_format($rowsh12['numberOfShares'])."</td>";
+		echo"<td>".number_format($rowsh12['totalnumberOfShares'])."</td>";
+		echo"<td>".$rowsh12['AccountNo']."</td>";
+		echo"<td>".$rowsh12['date']."</td>";
+		echo"<td>".$rowsh12['teller']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-		echo"<p style='color:red;font-size:15pt'>no Share record for June ".$yr."</p></br>";  
+		echo"<p style='color:red;font-size:15pt'>no Share record for December ".$yr."</p></br>";  
 			  }
 			  
 			  
 			  //getting customers registered in a specific month
 			  echo"<p style='color:green;font-size:17pt'>Members Registered</p></br>";
-			   $f6= mysqli_query($con,"select * from customer where MONTH(custSince)='06' and YEAR(custSince)='$yr'");
-            $numf6=mysqli_num_rows($f6);
-     		  if($numf6>0){
+			   $f12= mysqli_query($con,"select * from customer where MONTH(custSince)='12' and YEAR(custSince)='$yr'");
+            $numf12=mysqli_num_rows($f12);
+     		  if($numf12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Account NO.</td>";
@@ -4463,42 +4462,42 @@ echo"</table></br>";
              echo"<td>Date of joining</td>";
              echo"<td>Account Balance</td>";
     echo"</tr>";
-	while($rowcust6 = mysqli_fetch_array($f6)){
+	while($rowcust12 = mysqli_fetch_array($f12)){
 		echo"<tr>";
-        echo"<td>".$rowcust6['AccountNo']."</td>";
-        echo"<td>".$rowcust6['Name']."</td>";
-        echo"<td>".$rowcust6['custDob']."</td>";
+        echo"<td>".$rowcust12['AccountNo']."</td>";
+        echo"<td>".$rowcust12['Name']."</td>";
+        echo"<td>".$rowcust12['custDob']."</td>";
         
-        echo"<td>".$rowcust6['custsexId']."</td>";
-        echo"<td>".$rowcust6['custAddress']."</td>";
-        echo"<td>".$rowcust6['custPhone']."</td>";
-        echo"<td>".$rowcust6['custEmail']."</td>";
-        echo"<td>".$rowcust6['custOccup']."</td>";
-        echo"<td>".$rowcust6['custmarriedId']."</td>";
-        echo"<td>".$rowcust6['custHeir']."</td>";
-        echo"<td>".$rowcust6['custHeirrel']."</td>";
-        echo"<td>".$rowcust6['placeOfBirth']."</td>";
-        echo"<td>".$rowcust6['village']."</td>";
-        echo"<td>".$rowcust6['parish']."</td>";
-        echo"<td>".$rowcust6['subcounty']."</td>";
-        echo"<td>".$rowcust6['district']."</td>";
-        echo"<td>".$rowcust6['custSince']."</td>";
-        $blcust6=number_format($rowcust6['acountBalance']);
-        echo"<td>".$blcust6."</td>";
+        echo"<td>".$rowcust12['custsexId']."</td>";
+        echo"<td>".$rowcust12['custAddress']."</td>";
+        echo"<td>".$rowcust12['custPhone']."</td>";
+        echo"<td>".$rowcust12['custEmail']."</td>";
+        echo"<td>".$rowcust12['custOccup']."</td>";
+        echo"<td>".$rowcust12['custmarriedId']."</td>";
+        echo"<td>".$rowcust12['custHeir']."</td>";
+        echo"<td>".$rowcust12['custHeirrel']."</td>";
+        echo"<td>".$rowcust12['placeOfBirth']."</td>";
+        echo"<td>".$rowcust12['village']."</td>";
+        echo"<td>".$rowcust12['parish']."</td>";
+        echo"<td>".$rowcust12['subcounty']."</td>";
+        echo"<td>".$rowcust12['district']."</td>";
+        echo"<td>".$rowcust12['custSince']."</td>";
+        $blcust12=number_format($rowcust12['acountBalance']);
+        echo"<td>".$blcust12."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Member was registered in December ".$yr."</p></br>";  
 			  }			
 			 
 			 
 			   //getting monthly loans
 			   echo"<p style='color:green;font-size:17pt'>Loans given out</p></br>";
-			  $g6= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='06' and YEAR(dateOfApproval )='$yr'");
-		      $numg6=mysqli_num_rows($g6);
-     		  if($numg6>0){
+			  $g12= mysqli_query($con,"select * from loan where MONTH(dateOfApproval )='12' and YEAR(dateOfApproval )='$yr'");
+		      $numg12=mysqli_num_rows($g12);
+     		  if($numg12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>Loan id.</td>";
@@ -4515,40 +4514,40 @@ echo"<p style='color:red;font-size:15pt'>no Member was registered in June ".$yr.
 			echo"<td>Fine</td>";
             echo"<td>AccountNo</td>";
     echo"</tr>";
-	while($rowln6 = mysqli_fetch_array($g6)){
+	while($rowln12 = mysqli_fetch_array($g12)){
 		echo"<tr>";
-       echo"<td>".$rowln6['loanId']."</td>";
-        echo"<td>".$rowln6['Name']."</td>";
-        $m6= number_format($rowln6['approvedAmount']);
-        echo"<td>".$m6."</td>";
-        $pn6=number_format($rowln6['actualAmount']);
-         echo"<td>".$pn6."</td>";
-        echo"<td>".$rowln6['dateOfApproval']."</td>";
-		echo"<td>".$rowln6['DueDate']."</td>";
-        echo"<td>".$rowln6['status']."</td>";
-         echo"<td>".$rowln6['loansOfficer']."</td>";
-		 $mpt6= number_format($rowln6['monthlyInstalment']);
-        echo"<td>".$mpt6."</td>";
-        $blc6= number_format($rowln6['balance']);
-        echo"<td>".$blc6."</td>";
-        echo"<td>".$rowln6['period']."</td>";
-		$fn6= number_format($rowln6['fine']);
-		echo"<td>".$fn6."</td>";
-        echo"<td>".$rowln6['AccountNo']."</td>";
+       echo"<td>".$rowln12['loanId']."</td>";
+        echo"<td>".$rowln12['Name']."</td>";
+        $m12= number_format($rowln12['approvedAmount']);
+        echo"<td>".$m12."</td>";
+        $pn12=number_format($rowln12['actualAmount']);
+         echo"<td>".$pn12."</td>";
+        echo"<td>".$rowln12['dateOfApproval']."</td>";
+		echo"<td>".$rowln12['DueDate']."</td>";
+        echo"<td>".$rowln12['status']."</td>";
+         echo"<td>".$rowln12['loansOfficer']."</td>";
+		 $mpt12= number_format($rowln12['monthlyInstalment']);
+        echo"<td>".$mpt12."</td>";
+        $blc12= number_format($rowln12['balance']);
+        echo"<td>".$blc12."</td>";
+        echo"<td>".$rowln12['period']."</td>";
+		$fn12= number_format($rowln12['fine']);
+		echo"<td>".$fn12."</td>";
+        echo"<td>".$rowln12['AccountNo']."</td>";
          echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-				echo"<p style='color:red;font-size:15pt'>no loan was given out in June".$yr."</p></br>";  
+				echo"<p style='color:red;font-size:15pt'>no loan was given out in December ".$yr."</p></br>";  
 			  }
 
 			 
 			  //getting monthly loanRepayment
 			  echo"<p style='color:green;font-size:17pt'>Loan Repayment</p></br>";
-			  $h6= mysqli_query($con,"select * from loanrepayment where MONTH(date)='06' and YEAR(date)='$yr'");
-		      $numh6=mysqli_num_rows($h6);
-     		  if($numh6>0){
+			  $h12= mysqli_query($con,"select * from loanrepayment where MONTH(date)='12' and YEAR(date)='$yr'");
+		      $numh12=mysqli_num_rows($h12);
+     		  if($numh12>0){
     echo"<table border=1 style= 'background-color:gainsboro'>";
     echo"<tr style= 'background-color:orange'>";
     echo"<td>repaymentId</td>";
@@ -4564,27 +4563,27 @@ echo"</table></br>";
              echo"<td>AccountNo</td>";
             echo"<td>loanId</td>";
             echo"</tr>";
-	while($rowrep6 = mysqli_fetch_array($h6)){
+	while($rowrep12 = mysqli_fetch_array($h12)){
 		echo"<tr>";
-        echo"<td>".$rowrep6['repaymentId']."</td>";
-        echo"<td>".$rowrep6['date']."</td>";
-        echo"<td>".number_format($rowrep6['loanAmount'])."</td>";
+        echo"<td>".$rowrep12['repaymentId']."</td>";
+        echo"<td>".$rowrep12['date']."</td>";
+        echo"<td>".number_format($rowrep12['loanAmount'])."</td>";
         
-        echo"<td>".number_format($rowrep6['principlePayment'])."</td>";
-        echo"<td>".number_format($rowrep6['intrest'])."</td>";
-        echo"<td>".number_format($rowrep6['fine'])."</td>";
-        echo"<td>".number_format($rowrep6['totalPay'])."</td>";
-        echo"<td>".number_format($rowrep6['balance'])."</td>";
-        echo"<td>".$rowrep6['receivedBy']."</td>";
-        echo"<td>".$rowrep6['paidBy']."</td>";
-        echo"<td>".$rowrep6['AccountNo']."</td>";
-        echo"<td>".$rowrep6['loanId']."</td>";
+        echo"<td>".number_format($rowrep12['principlePayment'])."</td>";
+        echo"<td>".number_format($rowrep12['intrest'])."</td>";
+        echo"<td>".number_format($rowrep12['fine'])."</td>";
+        echo"<td>".number_format($rowrep12['totalPay'])."</td>";
+        echo"<td>".number_format($rowrep12['balance'])."</td>";
+        echo"<td>".$rowrep12['receivedBy']."</td>";
+        echo"<td>".$rowrep12['paidBy']."</td>";
+        echo"<td>".$rowrep12['AccountNo']."</td>";
+        echo"<td>".$rowrep12['loanId']."</td>";
         echo"</tr>";	
 				}
 echo"</table></br>";				
 			  }
 			  else{
-echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for June ".$yr."</p></br>";  
+echo"<p style='color:red;font-size:15pt'>no Loan Repayment record for December ".$yr."</p></br>";  
 			  }			
 			 
 		
