@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Customer Search',1); ?>
@@ -33,7 +32,17 @@
 			
 			<form action="transactionSearch.php" method="post" >
              <p class="heading_narrow">Quick Search by customer Name </p>
-				<input type="text" name="custname" placeholder="Customer Name" required/>
+			 <?php
+				include_once'function.php';
+				$a=mysqli_query($con,"select * from customer");
+				echo"<select name='custname' required>";
+				
+				while($row=mysqli_fetch_array($a)){
+				echo"<option>".$row['Name']."</option>";
+				}
+				echo"</select>";
+				?>
+				
                 <select name="sel" value="sel"><option>deposit</option><option>withdraw</option></select required/>
 				<input type="submit" name="customm" value="Search" />
 			</form>

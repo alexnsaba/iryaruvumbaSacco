@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Microfinance Management',0); ?>

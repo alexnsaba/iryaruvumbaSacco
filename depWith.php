@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Microfinance Management',0); ?>
@@ -38,10 +37,17 @@
 			<tr>
                 <td>Customer Name</td>
 				<td>
+				<?php
+				include_once'function.php';
+				$a=mysqli_query($con,"select * from customer");
+				echo"<select name='scustoname' required>";
 				
-				
-				<input type="text" name="scustoname" required>
-			</td>
+				while($row=mysqli_fetch_array($a)){
+				echo"<option>".$row['Name']."</option>";
+				}
+				echo"</select>";
+				?>
+				</td>
                 </tr>
             
              <tr>
@@ -51,7 +57,18 @@
                 <td>  Date</td><td><input type="date" name="sdate" required ></td>
             </tr>
              <tr>
-                <td>Teller</td><td><input type="text" name="steller" placeholder="name of the teller" required></td>
+                <td>Teller</td>
+				<td>
+				<?php
+				echo"<select name='steller' value='steller' required>";
+				require_once 'function.php';
+				$rem=mysqli_query($con,"select * from employee");
+				while($remp=mysqli_fetch_array($rem)){
+				echo"<option>".$remp['name']."</option>";
+				}
+				echo"</select>";
+				?>
+				</td>
                  </tr>
             <tr>
                 <td>Paid By</td><td><input type="text" name="skin" placeholder="who has brought money" required></td>
@@ -81,7 +98,18 @@
                 <td> Account Number</td><td><input type="number" name="wcustonum" required ></td>
             </tr>           
 		   <tr>
-                <td>Customer Name</td><td><input type="text" name="wcustoname" required></td>
+                <td>Customer Name</td><td>
+				<?php
+				include_once'function.php';
+				$a=mysqli_query($con,"select * from customer");
+				echo"<select name='wcustoname' required>";
+				
+				while($row=mysqli_fetch_array($a)){
+				echo"<option>".$row['Name']."</option>";
+				}
+				echo"</select>";
+				?>
+				</td>
                 </tr>
             
              <tr>
@@ -91,7 +119,18 @@
                 <td>  Date</td><td><input type="date" name="wdate" required></td>
             </tr>
              <tr>
-                <td>Teller</td><td><input type="text" name="wteller" placeholder="name of the teller" required></td>
+                <td>Teller</td>
+				<td>
+				<?php
+				echo"<select name='wteller' value='wteller' required>";
+				require_once 'function.php';
+				$rem=mysqli_query($con,"select * from employee");
+				while($remp=mysqli_fetch_array($rem)){
+				echo"<option>".$remp['name']."</option>";
+				}
+				echo"</select>";
+				?>
+				</td>
                  </tr>
             
             

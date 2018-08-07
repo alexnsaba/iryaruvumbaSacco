@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Loan Search',1); ?>
@@ -21,7 +20,7 @@
             <a href="repay.php">Loan Repayment</a>
 			<a href="loanEdit.php">Edit</a>
 			<a href="loanDel.php">Delete</a>
-			<a href="fine.php">Compute Fine</a>
+			
 		</div>
 					
 		<!-- CONTENT: Loan Search -->
@@ -96,7 +95,17 @@
 				</tr>
 				<tr>
 				<td>Loans Officer</td>
-				<td><input type="text" name="lofficer" placeholder="Loans Officer" required></td>
+				<td>
+				<?php
+				echo"<select name='lofficer' value='lofficer' required>";
+				require_once 'function.php';
+				$rem=mysqli_query($con,"select * from employee");
+				while($remp=mysqli_fetch_array($rem)){
+				echo"<option>".$remp['name']."</option>";
+				}
+				echo"</select>";
+				?>
+				</td>
 				</tr>
 				<tr>
 				<td colspan="3">

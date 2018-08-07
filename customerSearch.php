@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	#checkLogin();
@@ -6,7 +5,7 @@
 	#getSettings();
 	#getFees();
 ?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Microfinance Management',0); ?>

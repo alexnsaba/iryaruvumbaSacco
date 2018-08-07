@@ -1,14 +1,9 @@
-<!DOCTYPE HTML>
 <?PHP	
 	require 'function.php';
-	
-	
 	//Generate timestamp
 	$timestamp = time();
-	
-
-?>
-
+	?>
+<!DOCTYPE html>
 <html>
 	<?PHP includeHead('New Customer',0) ?>	
 		<script>

@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'functions.php';
 	checkLogin();
@@ -12,7 +11,7 @@
 	
 	$query_emplcurr = getEmplCurr();
 ?>
-	
+<!DOCTYPE html>	
 <html>
 	<?PHP includeHead('Current Employees',1) ?>	
 	

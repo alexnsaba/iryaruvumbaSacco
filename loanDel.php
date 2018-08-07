@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 ?>
+<!DOCTYPE html>
 <html>
 	<?PHP includeHead('Settings | Basic Settings',1) ?>
 	<body>
@@ -15,7 +15,7 @@
             <a href="repay.php">Loan Repayment</a>
 			<a href="loanEdit.php">Edit</a>
 			<a href="loanDel.php">Delete</a>
-			<a href="fine.php">Compute Fine</a>
+			
 		</div>
 	<!-- LEFT SIDE: Basic Settings -->	
 		<div class="content_settings">

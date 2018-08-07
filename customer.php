@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	#checkLogin();
