@@ -1,9 +1,8 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 
 ?>
-
+<!DOCTYPE html>
 <html>
 	<?PHP includeHead('Settings | Basic Settings',1) ?>
 	
@@ -75,7 +74,18 @@
 					
                      <tr>
 						<td> Person Responsible</td>
-						<td><input type="text" name="respp" placeholder="person responsible" required></td>
+						<td>
+						<?php
+				echo"<select name='respp' value='respp' required>";
+				require_once 'function.php';
+				$rem=mysqli_query($con,"select * from employee");
+				while($remp=mysqli_fetch_array($rem)){
+				echo"<option>".$remp['name']."</option>";
+				}
+				echo"</select>";
+				?>
+				
+				</td>
 					</tr>
 					
 				</table>

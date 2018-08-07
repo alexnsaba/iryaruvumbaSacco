@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Microfinance Management',0); ?>
@@ -23,7 +22,7 @@
             <a href="repay.php">Loan Repayment</a>
 			<a href="loanEdit.php">Edit</a>
 			<a href="loanDel.php">Delete</a>
-			<a href="fine.php">Compute Fine</a>
+			
 		</div>
 		<!-- Left Side of Dashboard -->
 		<div class="content_left" style="width:100%;">

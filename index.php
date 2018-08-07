@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
 <?PHP
+session_start();
 function includeHead($title, $endFlag = 1) {
           $title="Iryaruvumba SACCO";
 		echo '<head>
@@ -47,8 +47,7 @@ function myFunction() {
 }
 </script>
 </head>
-	<?PHP includeHead('Microfinance Management') ?>	
-	
+	<?php includeHead('Microfinance Management') ?>
 	<body>
         <br/><br/><h1 style="color:#037881;font-size:30pt">Iryaruvumba Developement Savings and Credit Cooperative</h1>
 		<div class="content_center" style="width:100%; margin-top:15em">
@@ -62,9 +61,12 @@ function myFunction() {
 		<!-- RIGHT SIDE: Login Form -->
 		<div class="content_right" style="width:50%; padding-left:5em; text-align:left;"><br/>
 			
-            <p class="heading" style="margin:0; text-align:left;">Please login...</p>
+            <p class="heading" style="margin:0; text-align:left;font-size:20pt">Please login...</p>
 			
-			<form action="function.php" method="post">
+			<form action="index.php" method="post">
+			<p class="heading" style="margin:0;color:blue; text-align:left;">Login As</p>
+			<p style="margin:0; text-align:left;">Admin <input type="radio" name="cat" value="Admin" required> 
+			Usual Employee <input type="radio" name="cat" value="Usual Employee"  required></p>
 				<table id="tb_fields" style="margin:0; border-spacing:0em 1.25em;">
 					<tr>
 						<td>
@@ -88,9 +90,74 @@ function myFunction() {
 					</tr>
 				</table>
 			</form>
-			<h1 style="color:#037881;font-size:30pt">Save For The Future</h1>
+						<?php
+	if(isset($_POST['login'])){
+		$con=mysqli_connect("localhost","root","","mango");
+	//usual Employee login
+	if($_POST['cat']== "Usual Employee"){
+	//checking if username and password fields are not empty
+    if(!empty($_POST['username'])&&($_POST['password']))
+    {
+		
+        $username=$_POST['username'];
+        $password=$_POST['password'];
+		#$_SESSION['user']=$username;
+		
+        $sel="select * from user where username='$username' AND password='$password' ";
+        $a=mysqli_query($con,$sel);
+        $row=mysqli_num_rows($a);
+        if($row==1)
+        {
 			
-		</div>
+            $_SESSION['login_user']=$username;
+			$_SESSION['password']=$password;
+			$URL="start.php";
+			 echo "<script>window.location.href = '{$URL}';</script>";
+			 echo'<META HTTP-EQUIV = "refresh" content="0;URL=' .$URL . ' ">';
+			 exit();
+             #header('Location: start.php');
+			 }
+        else
+        {
+            echo"<p style=color:red;font-size:17pt>Either username or password is incorrect</p>";
+           }
+    }
+    else
+    {
+        echo"<p style=color:red;font-size:25pt>please fill the blanks</p>";
+        
+    }
+}
+//admin login
+else if($_POST['cat']== "Admin"){
+	//checking if username and password fields are not empty
+    if(!empty($_POST['username'])&&($_POST['password'])){
+	   session_start();	
+	 $username=$_POST['username'];
+     $password=$_POST['password'];
+	 if(($username=="IryaruvumbaSacco")&&($password="iryaru@2018")){
+        		$_SESSION['login_user']=$username;
+			$_SESSION['password']=$password; 
+			$URL="admin.php";
+			 echo "<script>window.location.href = '{$URL}';</script>";
+			 echo'<META HTTP-EQUIV = "refresh" content="0;URL=' .$URL . ' ">'; 	
+	 }
+	 else
+        {
+            #header("refresh:3,url=index.php");
+            echo"<p style=color:red;font-size:15pt>Either username or password is incorrect</p>";
+           }
+	}
+	else
+    {
+        echo"<p style=color:red;font-size:25pt>please fill the blanks</p>";
+        
+    }
+}
+}
+			?>
+			<h1 style="color:#037881;font-size:30pt">Save For The Future</h1>
+          </div>
 		
 		
 		

@@ -1,9 +1,8 @@
-<!DOCTYPE HTML>
 <?PHP	
 	require 'function.php';
 	
 ?>
-
+<!DOCTYPE html>
 <html>
 	<?PHP includeHead('New Employee',0) ?>	
 		

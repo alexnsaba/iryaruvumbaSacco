@@ -1,9 +1,8 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 
 ?>
-
+<!DOCTYPE html>
 <html>
 	<?PHP includeHead('Settings | Basic Settings',1) ?>
 	
@@ -21,7 +20,7 @@
             <a href="repay.php">Loan Repayment</a>
 			<a href="loanEdit.php">Edit</a>
 			<a href="loanDel.php">Delete</a>
-			<a href="fine.php">Compute Fine</a>
+			
 		</div>
 	
 		<!-- LEFT SIDE: Basic Settings -->	
@@ -56,6 +55,9 @@
                 </option>
 				<option>
                 monthlyInstalment
+                </option>
+				<option>
+                fine
                 </option>
 				<option>
                 balance
@@ -102,6 +104,9 @@
                 }
             else if($_POST['dep']=="dateOfApproval"){
                 $field="dateOfApproval";
+            }
+			else if($_POST['dep']=="fine"){
+                $field="fine";
             }
 			 else if($_POST['dep']=="DueDate"){
                 $field="DueDate";

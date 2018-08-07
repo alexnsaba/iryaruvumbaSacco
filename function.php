@@ -1,5 +1,5 @@
 <?php
-@session_start();
+session_start();
 			if(isset($_SESSION['login_user'])&& !empty($_SESSION['login_user'])){
 			}else{
 			 header("location:index.php");	
@@ -10,13 +10,6 @@ mysqli_query($con,"CREATE DATABASE mango");
 mysqli_select_db($con,"mango");
 mysqli_query($con,"CREATE TABLE user(userId int(20) primary key not null auto_increment,
 firstName varchar(30),lastName varchar(30),username varchar(30) unique not null,password varchar(10) unique not null)");
-//inserting in a user to log in
-/* $password="leading2018";
-$username="leading";
-$user=md5($username);
-$pass=md5($password);
- mysqli_query($con,"insert into user(firstName,lastName,username,password) values('nsaba','Alex',
-'$user','$pass')"); */ 
 #creating table employee
 mysqli_query($con,"CREATE TABLE employee(empId int(20) primary key not null auto_increment,
 name varchar(30),empSalary int(30),empAddress varchar(30),empGender varchar(10),empPhone varchar(13),
@@ -77,11 +70,10 @@ function includeHead($title, $endFlag = 1) {
 			';
 		if ($endFlag == 1) echo '</head>';
 	}
-function checkLogout(){
-		if ($_SESSION['logrec_logout'] == 0){
-			showMessage("You forgot to logout last time. Please remember to log out properly.");
-			$_SESSION['logrec_logout'] = 1;
-		}
+		function showMessage($text) {
+		echo '<script language=javascript>
+						alert(\''.$text.'\')
+					</script>';
 	}
 //logout function
 function logout(){
@@ -104,13 +96,7 @@ function logout(){
 function includeMenu($tab_no){
 	
 	$_SESSION['user']="Kwiringira Amos";
-	
-     /* $con=mysqli_connect("localhost","root","");
-     mysqli_select_db($con,"mango");
-     $sell="select * from user ";
-        $a=mysqli_query($con,$sell);
-        $row=mysqli_fetch_array($a); */
-		echo '		
+	echo '		
 		<!-- MENU HEADER -->
 		<div id="menu_header">
 			<img src="ico/mangoo.jpg" alt="sacco logo " style="width:11%;margin-left:5.7in">
@@ -118,7 +104,7 @@ function includeMenu($tab_no){
 				<ul>
 					<li>'.$_SESSION['login_user'].'   
 						<ul>
-							<li><a href="logout.php"><i class="fa f-sign-out fa-fw"></i> Logout</a></li>
+							<li><a href="logout.php"><i class="fa f-sign-out fa-fw"></i> Logout</a></br></br></br></li>
 						</ul>
 					</li>
 				</ul>
@@ -158,48 +144,38 @@ function includeMenu($tab_no){
 					echo '</ul>
 			</div>';
 	}
-	if(isset($_POST['login']))
-{
-	session_start();
-   //checking if username and password fields are not empty
-    if(!empty($_POST['username'])&&($_POST['password']))
-    {
-		#session_start();
-        $username=$_POST['username'];
-        $password=$_POST['password'];
-		#$_SESSION['user']=$username;
-		$usernam=md5("leading");
-		$passwor=md5("leading2018");
-        $sel="select * from user where username='$username' AND password='$password' ";
-        $a=mysqli_query($con,$sel);
-        $row=mysqli_num_rows($a);
-        if($row==1)
-        {
-			
-            $_SESSION['login_user']=$username;
-			$_SESSION['password']=$password;
-			if(isset($_SESSION['login_user'])){
-             header('Location: start.php');
-			}
-			else{
-			header('Location: index.php');	
-			}
-            }
-        else
-        {
-            header("refresh:3,url=index.php");
-            echo"<p style=color:red;font-size:25pt>Either username or password is incorrect</p>";
-           
-            
-        }
-    }
-    else
-    {
-        header("refresh:3,url=index.php");
-         echo"<p style=color:red;font-size:25pt>please fill the blanks</p>";
-        
-    }
-}
+	//function to create menu for admin page.
+	function Menu($tab_no){
+	
+	$_SESSION['user']="Kwiringira Amos";
+	echo '		
+		<!-- MENU HEADER -->
+		<div id="menu_header">
+			<img src="ico/mangoo.jpg" alt="sacco logo " style="width:11%;margin-left:5.7in">
+			<div id="menu_logout">
+				<ul>
+					<li>'.$_SESSION['login_user'].'   
+						<ul>
+							<li><a href="logout.php"><i class="fa f-sign-out fa-fw"></i> Logout</a></br></br></br></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>';
+		echo '
+		<!-- MENU TABS -->
+		<div id="menu_tabs"> 
+		<ul>
+				<li'; 
+				if ($tab_no == 1) echo ' id="tab_selected"';
+				echo '><a href="admin.php"><i class=""></i> Manage Login Accounts</a></li>
+				<li';
+				
+				
+					echo '</ul>
+			</div>';
+	}
+
 // process from cust_new.php
 
 	//CREATE-Button
@@ -310,6 +286,74 @@ function includeMenu($tab_no){
         
 		
 		}
-  
+   // calculating fine due to delay to clear monthly installments
+   //getting the current date
+$currentDate=date('Y-m-d');
+$currDet=date_create($currentDate);
+//obtaining the day,month, and year of the current date
+$dCurr=date_format($currDet,'d');
+$mCurr=date_format($currDet,'m');
+$yCurr=date_format($currDet,'Y');
+$nf=mysqli_query($con,"select * from loan where balance>0");
+while($rowf=mysqli_fetch_array($nf)){
+$lid=$rowf['loanId'];
+$Duedet = date_create( $rowf['DueDate']);
+//getting day,month and year of the DueDate
+$dDue = date_format($Duedet,'d');
+$mDue = date_format($Duedet,'m');
+$yDue = date_format($Duedet,'Y');
+//condition for determining the Due Date
+if((($dCurr >= $dDue)&&($mCurr >= $mDue) &&($yCurr == $yDue ))
+	||(((($dCurr-$dDue)> -30))&&($mCurr > $mDue)&&($yCurr == $yDue ))
+ ||(($dCurr >= $dDue)&&(($mCurr- $mDue)== -11) &&($yCurr > $yDue) ) ){
+//reducing on the period
+ if($rowf['period']>=2){
+	 $nperiod=$rowf['period']-1;
+	 }
+	  if($rowf['monthlyInstalment']>0){
+			 $fine= ((5/100)*($rowf['monthlyInstalment']))+$rowf['fine'];
+			 $nextMonthly=$rowf['balance']/$nperiod;
+			 $newMonthlyInstalment=$rowf['monthlyInstalment']+$nextMonthly;
+			 $newbal= $rowf['balance'] +$fine;
+			 mysqli_query($con,"update loan set monthlyInstalment='$newMonthlyInstalment',fine='$fine',balance='$newbal' where loanId ='$lid'");
+			 //updating the next due date
+		$det=date_create($rowf['DueDate']);
+        date_add($det,date_interval_create_from_date_string("30 days"));
+        $dfi= date_format($det,"Y-m-d");
+		mysqli_query($con,"update loan set DueDate='$dfi' where loanId ='$lid'");
+			  //updating period
+		mysqli_query($con,"update loan set period='$nperiod' where loanId ='$lid'");
+		//taking the fine to income table
+		$lnm=$rowf['Name'];
+		$dtt=$rowf['DueDate'];
+        mysqli_query($con,"insert into income(typeOfIncome,receivedFrom,incomeAmount,date) values('Fine','$lnm','$fine','$dtt')");		
+			}
+			//updating due date only if a user cleared the previously monthly instalment
+			 else{
+				 
+			 $fine=0;
+			 $nextMonthly=$rowf['balance']/$nperiod;
+			 $newMonthlyInstalment=$rowf['monthlyInstalment']+$nextMonthly;
+			 mysqli_query($con,"update loan set monthlyInstalment='$newMonthlyInstalment' where loanId ='$lid' ");
+			 //updating the next due date
+		$det=date_create($rowf['DueDate']);
+        date_add($det,date_interval_create_from_date_string("30 days"));
+        $dfi= date_format($det,"Y-m-d");
+		mysqli_query($con,"update loan set DueDate='$dfi' where loanId ='$lid'");
+			  //updating period
+		$a=mysqli_query($con,"update loan set period='$nperiod' where loanId ='$lid'");
+			}
+}
 
+}
+
+//changing the status of cleared loans from active to cleared
+$stsa=mysqli_query($con,"select * from loan where balance <=0");
+while($rowst=mysqli_fetch_array($stsa)){
+$listt=$rowst['loanId'];
+$cle="Cleared";
+mysqli_query($con," update loan set status= '$cle'");
+}
+//Removing approved loans from loan application
+mysqli_query($con," delete from loanapplication where status='Approved'");
 ?>

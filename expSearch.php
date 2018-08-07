@@ -1,10 +1,9 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	//checkLogin();
 	//connect();
 ?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Loan Search',1); ?>

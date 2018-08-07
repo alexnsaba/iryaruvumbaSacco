@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Loan Search',1); ?>
@@ -21,7 +20,7 @@
             <a href="repay.php">Loan Repayment</a>
 			<a href="loanEdit.php">Edit</a>
 			<a href="loanDel.php">Delete</a>
-			<a href="fine.php">Compute Fine</a>
+			
 		</div>
 					
 		<!-- CONTENT: Loan Search -->
@@ -35,7 +34,16 @@
 			
 			<form action="loanSearch.php" method="post" style="margin-top:4.5em;">
 				<p class="heading_narrow">Search Loan by Customer Name</p>
-				<input type="text" name="loon" placeholder="name of loan holder">
+				<?php
+				include_once'function.php';
+				$a=mysqli_query($con,"select * from customer");
+				echo"<select name='loon' required>";
+				
+				while($row=mysqli_fetch_array($a)){
+				echo"<option>".$row['Name']."</option>";
+				}
+				echo"</select>";
+				?>
 				<input type="submit" name="statu" value="Search" />
 			</form>
 			

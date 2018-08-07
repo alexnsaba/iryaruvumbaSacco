@@ -1,10 +1,9 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
 	#checkLogin();
 	#connect();
 ?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Customer Search',1); ?>
@@ -28,15 +27,23 @@
 	
 			<form action="ministatement.php" method="post">
 				<p class="heading_narrow">Statement of account by customer Number</p>
-				<input type="text" name="cusst" placeholder="Customer Number"  required/>
+				<input type="text" name="cusst" placeholder="Account Number"  required/>
                
 				<input type="submit" name="ustom" value="Search" />
 			</form>
 			
 			<form action="ministatement.php" method="post" >
              <p class="heading_narrow">Statement of account by customer Name </p>
-				<input type="text" name="custname" placeholder="Customer Name" required/>
-              
+			 <?php
+				include_once'function.php';
+				$a=mysqli_query($con,"select * from customer");
+				echo"<select name='custname' required>";
+				
+				while($row=mysqli_fetch_array($a)){
+				echo"<option>".$row['Name']."</option>";
+				}
+				echo"</select>";
+				?>
 				<input type="submit" name="customm" value="Search" /><br><br><br>
 			</form>
             <?php

@@ -1,7 +1,7 @@
 <?PHP
 	require 'function.php';
 	?>
-
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Microfinance Management',0); ?>
@@ -23,7 +23,7 @@
             <a href="repay.php">Loan Repayment</a>
 			<a href="loanEdit.php">Edit</a>
 			<a href="loanDel.php">Delete</a>
-			<a href="fine.php">Compute Fine</a>
+			
 		</div>
     <div>
 	<center>
@@ -38,13 +38,23 @@
 			   <td>AccountNo</td><td><input type="text" name="custonum" placeholder="AccountNo" required  ></td>
             </tr>
             <tr> 
-			   <td>ApprovedAmount</td><td><input type="number" name="apprAmount" placeholder="AccountNo" required  ></td>
+			   <td>ApprovedAmount</td><td><input type="number" name="apprAmount" placeholder="Approved Amount" required  ></td>
             </tr>
 			<tr> 
 			   <td>Date</td><td><input type="date" name="apprdate"  required  ></td>
             </tr>
 			<tr> 
-			   <td>LoansOfficer</td><td><input type="text" name="off" placeholder="LoansOfficer" required  ></td>
+			   <td>LoansOfficer</td><td>
+			   <?php
+				echo"<select name='off' value='off' required>";
+				require_once 'function.php';
+				$rem=mysqli_query($con,"select * from employee");
+				while($remp=mysqli_fetch_array($rem)){
+				echo"<option>".$remp['name']."</option>";
+				}
+				echo"</select>";
+				?>
+			   </td>
             </tr>
             <tr>
                 <td colspan="4"><center>

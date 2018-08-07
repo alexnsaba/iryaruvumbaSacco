@@ -1,12 +1,7 @@
-<!DOCTYPE HTML>
 <?PHP
 	require 'function.php';
-	#checkLogin();
-	#connect();
-	#getSettings();
-	#getFees();
-?>
-
+	?>
+<!DOCTYPE html>
 <html>
 	<!-- HTML HEAD -->
 	<?PHP includeHead('Microfinance Management',0); ?>
